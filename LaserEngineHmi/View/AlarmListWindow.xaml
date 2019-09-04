@@ -1,0 +1,19 @@
+﻿<Window x:Class="LaserEngineHmi.View.AlarmListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LaserEngineHmi.View" ResizeMode="NoResize"
+        mc:Ignorable="d"  Background="#FF292828" WindowStartupLocation="CenterScreen"
+        Title="CNC报警列表" Height="300" Width="600">
+    <Grid>
+        <DataGrid Margin="10" Grid.Column="0" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1"
+                      ItemsSource="{Binding _AlarmList}" FontSize="14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="报警类型"    Width="100"    ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="报警号"  Width="100"   ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Alm_No}"/>
+                <DataGridTextColumn Header="报警信息"  Width="350"   ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Alm_Msg}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

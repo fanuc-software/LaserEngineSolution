@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d5e7598fc22540e8a633ada8a8dfa656" Name="Diagram1" ZoomLevel="54">
+        <EntityTypeShape EntityType="LaserEngineDBModel.RootMachiningLib_Material1" Width="1.5" PointX="9.375" PointY="7.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.LibInfo" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.MachiningLib_Cutting" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.MachiningLib_EdgeCutting" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.MachiningLib_Material" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.MachiningLib_Piercing" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.MachiningLib_SlopeControl" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.ManualInfo" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.RootMachiningLib_Cutting" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.RootMachiningLib_EdgeCutting" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.RootMachiningLib_Material" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.RootMachiningLib_Piercing" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.RootMachiningLib_SlopeControl" Width="1.5" PointX="4.75" PointY="10.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.SparePart" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.User" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaserEngineDBModel.UserRole" Width="1.5" PointX="12.75" PointY="3.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

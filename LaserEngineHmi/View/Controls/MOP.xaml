@@ -1,0 +1,281 @@
+﻿<UserControl x:Class="LaserEngineHmi.View.Controls.MOP"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LaserEngineHmi.View.Controls" 
+             xmlns:conv="clr-namespace:LaserEngineHmi.View.Converters" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d" 
+             Height="392" Width="554">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadPageCommand}"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnLoadPageCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <UserControl.Resources>
+        <conv:MopBackgroundColorConverter x:Key="_mbcc"/>
+        <conv:MopBoardBushConverter x:Key="_mbbc"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="56"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="56"/>
+            <ColumnDefinition Width="56"/>
+            <ColumnDefinition Width="56"/>
+            <ColumnDefinition Width="56"/>
+            <ColumnDefinition Width="56"/>
+            <ColumnDefinition Width="56"/>
+            <ColumnDefinition Width="56"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_AUTO_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_Auto_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Auto_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_AUTO_CMD}">
+        </Button>
+        <Button Grid.Row="0" Grid.Column="1" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_EDIT_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_Edit_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Edit_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_EDIT_CMD}"/>
+        <Button Grid.Row="0" Grid.Column="2" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_MDI_CONTENT}"
+                  Background="{Binding Mop_Key_Status.Mop_Mdi_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Mdi_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_MDI_CMD}"/>
+        <Button Grid.Row="0" Grid.Column="3" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_RMT_CONTENT}"
+                  Background="{Binding Mop_Key_Status.Mop_Rmt_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Rmt_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_RMT_CMD}"/>
+        <Button Grid.Row="0" Grid.Column="4" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_REF_CONTENT}"
+                  Background="{Binding Mop_Key_Status.Mop_Rtn_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Rtn_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_RTN_CMD}"/>
+        <Button Grid.Row="0" Grid.Column="5" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_JOG_CONTENT}"
+                  Background="{Binding Mop_Key_Status.Mop_Jog_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Jog_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_JOG_CMD}"/>
+        <Button Grid.Row="0" Grid.Column="6" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_HND_CONTENT}"
+                  Background="{Binding Mop_Key_Status.Mop_Handle_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Handle_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_HANDLE_CMD}"/>
+        <Button Grid.Row="1" Grid.Column="0" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_SINGLE_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_Step_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Step_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_STEP_CMD}"/>
+        <Button Grid.Row="1" Grid.Column="1" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_SKIP_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_Skip_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Skip_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_SKIP_CMD}"/>
+        <Button Grid.Row="1" Grid.Column="2" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_OPSTOP_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_Opt_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Opt_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_OPT_CMD}"/>
+        <Button Grid.Row="1" Grid.Column="3" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_DRYRUN_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_Dry_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Dry_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_DRY_CMD}"/>
+        <Button Grid.Row="1" Grid.Column="4" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_RESTART_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_AutoStart_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_AutoStart_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_AUTOSTART_CMD}"/>
+        <Button Grid.Row="1" Grid.Column="5" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_STOPSAVE_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_StorageStop_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_StorageStop_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_STORAGESTOP_CMD}"/>
+        <Button Grid.Row="1" Grid.Column="6" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_REPROC_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_RollBack_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_RollBack_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_ROLLBACK_CMD}"/>
+        <Button Grid.Row="2" Grid.Column="0" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_EXPTIME_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_PiercingDelay_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_PiercingDelay_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_PIERCINGDELAY_CMD}"/>
+        <Button Grid.Row="2" Grid.Column="1" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_SHPTIME_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_PiercingShorten_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_PiercingShorten_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_PIERCINGSHORTEN_CMD}"/>
+        <Button Grid.Row="2" Grid.Column="2" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_DUSTON_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_DustClear_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_DustClear_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_DUSTCLEAR_CMD}"/>
+        <Button Grid.Row="2" Grid.Column="3" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_LAMP_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_LampOn_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_LampOn_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_LAMPON_CMD}"/>
+        <Button Grid.Row="2" Grid.Column="4" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_APPROACH_CONTENT}" 
+                Background="{Binding Mop_Key_Status.Mop_FollowOn_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_FollowOn_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_FOLLOWON_CMD}"/>
+        <Button Grid.Row="2" Grid.Column="5" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_TRACELOCK_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_FollowLock_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_FollowLock_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_FOLLOWLOCK_CMD}"/>
+        <Button Grid.Row="3" Grid.Column="0" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_PAPID_OV0_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_RapidOv0_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_RapidOv0_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_RAPIDOV0_CMD}"/>
+        <Button Grid.Row="3" Grid.Column="1" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_PAPID_OV25_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_RapidOv25_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_RapidOv25_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_RAPIDOV25_CMD}"/>
+        <Button Grid.Row="3" Grid.Column="2" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_PAPID_OV50_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_RapidOv50_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_RapidOv50_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_RAPIDOV50_CMD}"/>
+        <Button Grid.Row="3" Grid.Column="3" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_PAPID_OV100_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_RapidOv100_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_RapidOv100_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_RAPIDOV100_CMD}"/>
+        <Button Grid.Row="3" Grid.Column="4" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_HND_OV1_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_HandleOv1_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_HandleOv1_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_HANDLEOV1_CMD}"/>
+        <Button Grid.Row="3" Grid.Column="5" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_HND_OV10_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_HandleOv10_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_HandleOv10_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_HANDLEOV10_CMD}"/>
+        <Button Grid.Row="3" Grid.Column="6" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_HND_OV100_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_HandleOv100_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_HandleOv100_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_HANDLEOV100_CMD}"/>
+        <Button Grid.Row="2" Grid.Column="6" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_HND_OV1000_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_HandleOv1000_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_HandleOv1000_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_HANDLEOV1000_CMD}"/>
+        <Button Grid.Row="4" Grid.Column="0" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_XAXIS_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_AXIS_X_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_AXIS_X_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_AXIS_X_CMD}"/>
+        <Button Grid.Row="4" Grid.Column="1" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_YAXIS_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_AXIS_Y_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_AXIS_Y_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_AXIS_Y_CMD}"/>
+        <Button Grid.Row="4" Grid.Column="2" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_ZAXIS_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_AXIS_Z_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_AXIS_Z_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_AXIS_Z_CMD}"/>
+        <Button Grid.Row="4" Grid.Column="3" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_4AXIS_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_AXIS_4_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_AXIS_4_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_AXIS_4_CMD}"/>
+        <Button Grid.Row="4" Grid.Column="4" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_PLUS_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_Manual_Plus_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Manual_Plus_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_MANUAL_PLUS_CMD}"/>
+        <Button Grid.Row="4" Grid.Column="5" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_RAPID_CONTENT}"
+                Background="{Binding Mop_Key_Status.Mop_Manual_Rapid_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Manual_Rapid_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_MANUAL_RAPID_CMD}"/>
+        <Button Grid.Row="4" Grid.Column="6" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="{DynamicResource MOP_SUB_CONTENT}" 
+                Background="{Binding Mop_Key_Status.Mop_Manual_Subtract_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Manual_Subtract_Status,Converter={StaticResource _mbbc}}"
+                Command="{Binding MOP_MANUAL_SUBTRACT_CMD}"/>
+        <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource MOP_AUXGAS_CONTENT}" Foreground="White" FontSize="12"/>
+                    <TextBlock Text="{Binding Path=Mop_Aux_G_Value,StringFormat={}{0} %}" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="150" VerticalAlignment="Center">
+                    <Button Content="-" Foreground="White" Style="{StaticResource OVButton}" Command="{Binding MOP_AUX_G_SUBTRACT_CMD}"/>
+                    <Slider Margin="5,0,5,0" Minimum="0" Maximum="100" Value="{Binding Mop_Key_Status.Mop_Aux_G_Value}" SmallChange="5" LargeChange="10" IsSnapToTickEnabled="True" Width="100" IsEnabled="False"  ></Slider>
+                    <Button Content="+" Foreground="White" Style="{StaticResource OVButton}" Command="{Binding MOP_AUX_G_PLUS_CMD}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Vertical" Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource MOP_JOGOV_CONTENT}" Foreground="White" FontSize="12"/>
+                    <TextBlock Text="{Binding Path=Mop_Jog_Override_Value,StringFormat={}{0} %}" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="150" VerticalAlignment="Center">
+                    <Button Content="-" Foreground="White" Style="{StaticResource OVButton}" Command="{Binding MOP_JOG_OVERRIDE_SUBTRACT_CMD}"/>
+                    <Slider Margin="5,0,5,0" Minimum="0" Maximum="100" Value="{Binding Mop_Key_Status.Mop_Jog_Override_Value}" IsEnabled="False" SmallChange="5" LargeChange="10" IsSnapToTickEnabled="True" Width="100"></Slider>
+                    <Button Content="+" Foreground="White" Style="{StaticResource OVButton}" Command="{Binding MOP_JOG_OVERRIDE_PLUS_CMD}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource MOP_LASERPOWER_CONTENT}" Foreground="White" FontSize="12"/>
+                    <TextBlock Text="{Binding Path=Mop_Laser_Power_Value,StringFormat={}{0} %}" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="150" VerticalAlignment="Center">
+                    <Button Content="-" Foreground="White" Style="{StaticResource OVButton}" Command="{Binding MOP_LASER_POWER_SUBTRACT_CMD}"/>
+                    <Slider Margin="5,0,5,0" Minimum="0" SmallChange="5" LargeChange="10" Maximum="100" IsSnapToTickEnabled="True" Value="{Binding Mop_Key_Status.Mop_Laser_Power_Value}" IsEnabled="False"   Width="100"></Slider>
+                    <Button Content="+" Foreground="White" Style="{StaticResource OVButton}" Command="{Binding MOP_LASER_POWER_PLUS_CMD}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1"  Orientation="Vertical" Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource MOP_LASERFREQ_CONTENT}" Foreground="White" FontSize="12"/>
+                    <TextBlock Text="{Binding Path=Mop_Laser_Freq_Value,StringFormat={}{0} %}" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="150" VerticalAlignment="Center">
+                    <Button Content="-" Foreground="White" Style="{StaticResource OVButton}" Command="{Binding MOP_LASER_FREQ_SUBTRACT_CMD}"/>
+                    <Slider Margin="5,0,5,0" Minimum="0" Maximum="100" Value="{Binding Mop_Key_Status.Mop_Laser_Freq_Value}" IsEnabled="False" SmallChange="5" LargeChange="10" IsSnapToTickEnabled="True" Width="100"></Slider>
+                    <Button Content="+" Foreground="White" Style="{StaticResource OVButton}" Command="{Binding MOP_LASER_FREQ_PLUS_CMD}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Orientation="Vertical" Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource MOP_LASERDUTYRADIO_CONTENT}" Foreground="White" FontSize="12"/>
+                    <TextBlock Text="{Binding Path=Mop_Laser_Duty_Value,StringFormat={}{0} %}" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="150" VerticalAlignment="Center">
+                    <Button Content="-" Foreground="White" Style="{StaticResource OVButton}" Command="{Binding MOP_LASER_DUTY_SUBTRACT_CMD}"/>
+                    <Slider Margin="5,0,5,0" Minimum="0" Maximum="100" Value="{Binding Mop_Key_Status.Mop_Laser_Duty_Value}" IsEnabled="False" SmallChange="5" LargeChange="10" IsSnapToTickEnabled="True" Width="100"></Slider>
+                    <Button Content="+" Foreground="White"  Style="{StaticResource OVButton}" Command="{Binding MOP_LASER_DUTY_PLUS_CMD}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+
+        <Grid Grid.Row="0" Grid.Column="8" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Button VerticalAlignment="Bottom" Width="40" Height="40" Grid.Row="0" Grid.Column="2" 
+                        HorizontalAlignment="Center" Style="{StaticResource AxisArrorButton}" />
+            <Button VerticalAlignment="Center" Width="40" Height="40" Grid.Row="1" Grid.Column="1"
+                        HorizontalAlignment="Right" Style="{StaticResource AxisArrorButton}" 
+                        RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <RotateTransform  Angle="-90"></RotateTransform>
+                </Button.RenderTransform>
+            </Button>
+            <Button VerticalAlignment="Center" Width="40" Height="40" Grid.Row="1" Grid.Column="3"
+                        HorizontalAlignment="Left" Style="{StaticResource AxisArrorButton}" 
+                        RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <RotateTransform  Angle="90"></RotateTransform>
+                </Button.RenderTransform>
+            </Button>
+            <Button VerticalAlignment="Top" Width="40" Height="40" Grid.Row="2" Grid.Column="2" 
+                        HorizontalAlignment="Center" Style="{StaticResource AxisArrorButton}" 
+                        RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <RotateTransform  Angle="180"></RotateTransform>
+                </Button.RenderTransform>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="8" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button VerticalAlignment="Center" Width="40" Height="40" Grid.Column="0"
+                        HorizontalAlignment="Center" Style="{StaticResource AxisArrorButton}"/>
+            <Button VerticalAlignment="Center" Width="40" Height="40" Grid.Column="1" 
+                        HorizontalAlignment="Center" Style="{StaticResource AxisArrorButton}"
+                    RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <RotateTransform  Angle="180"></RotateTransform>
+                </Button.RenderTransform>
+            </Button>
+            
+        </Grid>
+
+
+    </Grid>
+</UserControl>

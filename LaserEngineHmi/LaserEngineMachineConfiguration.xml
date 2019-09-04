@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<laser_engine_machine>
+  <software>
+    <language>zh-cn.xaml</language>
+    <name>LaserEngine</name>
+    <version>0.0.1</version>
+  </software>
+  <cncscreendisplay>
+    <start>F: &amp;&amp; cd F:\Program Files (x86)\CNCScreenE &amp;&amp; CNCSCRNE /SERVER /H=192.168.0.3:8193</start>
+  </cncscreendisplay>
+  <workstation>
+    <zlimit>100.0</zlimit>
+    <horizontal>false</horizontal>
+    <vertical>true</vertical>
+  </workstation>
+  <machining>
+    <machineType>L3000-B</machineType>
+    <cncType>31i-LB</cncType>
+    <xDistance>500.0</xDistance>
+    <yDistance>600.0</yDistance>
+    <zDistance>700.0</zDistance>
+    <xMotorType>Ais22/3000</xMotorType>
+    <yMotorType>Ais22/4000</yMotorType>
+    <zMotorType>Ais22/5000</zMotorType>
+    <laserType>激光器A</laserType>
+    <cutterType>切割头A</cutterType>
+    <opticalType>光纤类型A</opticalType>
+  </machining>
+  <machine>
+    <ip>192.168.1.1</ip>
+    <port>8193</port>
+    <timeOut>10</timeOut>
+    <mopStatus>
+      <startAdrType>12</startAdrType>
+      <startAdr>100</startAdr>
+    </mopStatus>
+    <mopCmd>
+      <startAdrType>12</startAdrType>
+      <startAdr>200</startAdr>
+    </mopCmd>
+  </machine>
+  <program>
+    <pcRoot>D:\</pcRoot>
+    <ncRoot>//CNC_MEM/USER/PATH1</ncRoot>
+  </program>
+  <simulate>
+    <noCnc>FALSE</noCnc>
+  </simulate>
+</laser_engine_machine>

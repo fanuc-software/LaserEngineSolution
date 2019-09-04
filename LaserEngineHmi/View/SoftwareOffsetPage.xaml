@@ -1,0 +1,160 @@
+﻿<Page x:Class="LaserEngineHmi.View.SoftwareOffsetPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LaserEngineHmi.View"
+      mc:Ignorable="d" 
+      Width="624" Height="528" Background="#FF323232"
+      Title="SoftwareOffsetPage">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0"/>
+        </Grid.RowDefinitions>
+
+        <Border CornerRadius="2" Grid.Row="1" 
+                		BorderThickness="1"
+                		Padding="0" Margin="0,5,0,0"
+                        Background="Transparent" BorderBrush="#FF323232">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="{DynamicResource MAINTAIN_SOFTWAREOFFSET_LANGUAGE}" Margin="10,6,0,6"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0">
+                    <ToggleButton Height="30" Width="100"  Content="简体中文" 
+                                  Command="{Binding ChineseCommand}" Style="{StaticResource NoFilledToggleButton}" 
+                                  IsChecked="{Binding LanguageChineseButtonStatus}"/>
+                    <ToggleButton Height="30" Width="100" Margin="20,0,0,0"  Content="English"  
+                                  Command="{Binding EnglishCommand}" Style="{StaticResource NoFilledToggleButton}" 
+                                  IsChecked="{Binding LanguageEnglishButtonStatus}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border CornerRadius="2" Grid.Row="2" 
+                		BorderThickness="1"
+                		Padding="0" Margin="0,5,0,0"
+                        Background="Transparent" BorderBrush="#FF323232">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="159"/>
+                    <ColumnDefinition Width="361"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="{DynamicResource MAINTAIN_SOFTWAREOFFSET_LIB}" Margin="10,6,0,6"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" Height="18" Width="70"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource MAINTAIN_SOFTWAREOFFSET_LIB_VERSION}" Margin="10,6,10,6"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding LibInfo}" Margin="10,6,10,6"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{DynamicResource MAINTAIN_SOFTWAREOFFSET_LIB_UPDATA_TITLE}" Margin="10,6,10,6"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,0,5" Width="320" Text="{Binding LibUpdataPath}" Style="{DynamicResource input-group-btn right}" Background="Transparent" 
+                         Button.Click="LibUpdataPath_Click" Foreground="Yellow">
+                </TextBox>
+                <Button Grid.Row="2" Grid.Column="2" Height="30" Width="100" FontSize="14" Background="Transparent" 
+                        Content="{DynamicResource MAINTAIN_SOFTWAREOFFSET_LIB_UPDATA_BTN}" Style="{StaticResource NoFilledButton}"
+                        Command="{Binding UpdataLibCommand}"/>
+                <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"  Orientation="Horizontal"
+                            VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding RootLibOperate}">
+                    <Button Height="30" Width="140" FontSize="14" Background="Transparent" 
+                        Content="{DynamicResource MAINTAIN_SOFTWAREOFFSET_LIB_BOOT_BTN}" Style="{StaticResource NoFilledButton}"
+                        Command="{Binding ChangeLibToBootCommand}" Visibility="Hidden"/>
+                    <Button Height="30" Width="140" FontSize="14" Background="Transparent" Margin="20,0,0,0"
+                        Content="{DynamicResource MAINTAIN_SOFTWAREOFFSET_LIB_USER_BTN}" Style="{StaticResource NoFilledButton}"
+                        Command="{Binding ChangeLibToUserCommand}" Visibility="Hidden"/>
+                    <Button Height="30" Width="140" FontSize="14" Background="Transparent" Margin="20,0,0,0"
+                        Content="{DynamicResource MAINTAIN_SOFTWAREOFFSET_LIB_INITIAL_BTN}" Style="{StaticResource NoFilledButton}"
+                        Command="{Binding InitialUserLibCommand}" Visibility="Hidden"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border CornerRadius="2" Grid.Row="3" 
+                		BorderThickness="1"
+                		Padding="0" Margin="0,5,0,0"
+                        Background="Transparent" BorderBrush="#FF323232">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="159"/>
+                    <ColumnDefinition Width="361"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="手持操作盒维护" Margin="10,6,0,6"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" Height="18" Width="70"/>
+                <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Height="30" Width="200" FontSize="14" Background="Transparent" 
+                        Content="重新启动手持盒服务" Command="{Binding Phb02bRestartCommand}"
+                        Style="{StaticResource NoFilledButton}" Margin="34,10"
+                        Visibility="Visible"/>
+            </Grid>
+        </Border>
+
+        <Border CornerRadius="2" Grid.Row="4" 
+                		BorderThickness="1"
+                		Padding="0" Margin="0,5,0,0"
+                        Background="Transparent" BorderBrush="#FF323232">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="159"/>
+                    <ColumnDefinition Width="361"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="{DynamicResource MAINTAIN_SOFTWAREOFFSET_VERSION}" Margin="10,6,0,6"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White" Height="18" Width="70"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource MAINTAIN_SOFTWAREOFFSET_SOFTWARE_VERSION}" Margin="0,0,9,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding SoftwareInfo}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{DynamicResource MAINTAIN_SOFTWAREOFFSET_SOFTWARE_OWNER_TITLE}" Margin="0,0,9,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{DynamicResource MAINTAIN_SOFTWAREOFFSET_SOFTWARE_OWNER}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{DynamicResource MAINTAIN_SOFTWAREOFFSET_SOFTWARE_UPDATA_TITLE}" Margin="0,0,9,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"
+                           Visibility="Hidden"/>
+                <TextBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,0,5" Width="320" 
+                         Text="{Binding LibUpdataPath}" Style="{DynamicResource input-group-btn right}" 
+                         Background="Transparent"  Visibility="Hidden"
+                         Button.Click="LibUpdataPath_Click" Foreground="Yellow">
+                    <TextBox.Tag>
+                        <Path Style="{DynamicResource InputGroupPathStyle}" Data="{DynamicResource PathDataSearch}"></Path>
+                    </TextBox.Tag>
+                </TextBox>
+                <Button Grid.Row="3" Grid.Column="2" Height="30" Width="100" FontSize="14" Background="Transparent" 
+                        Content="{DynamicResource MAINTAIN_SOFTWAREOFFSET_SOFTWARE_UPDATA_BTN}" 
+                        Style="{StaticResource NoFilledButton}" Margin="34,10"
+                        Visibility="Hidden"/>
+            </Grid>
+        </Border>
+
+
+
+    </Grid>
+</Page>

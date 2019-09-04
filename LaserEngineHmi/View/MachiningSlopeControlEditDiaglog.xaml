@@ -1,0 +1,107 @@
+﻿<Window x:Class="LaserEngineHmi.View.MachiningSlopeControlEditDiaglog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LaserEngineHmi.View" ResizeMode="NoResize"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="加工工艺参数编辑-功率控制" Height="640" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="编号:" Margin="10,0,0,0" Grid.Row="2" Grid.Column="0"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Text="{Binding _SelSlopeControlData.NO}" Margin="10,5,0,5" Width="160" Grid.Row="2" Grid.Column="1"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"  Background="Transparent" Foreground="Black" IsEnabled="False"/>
+
+        <!--<TextBlock Text="焦点距离:" Margin="10,0,0,0" Grid.Row="3" Grid.Column="0"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Text="{Binding _SelSlopeControlData.FocalDistance}" Margin="10,5,0,5" Width="160" Grid.Row="3" Grid.Column="1"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"  Background="Transparent" Foreground="Black"/>-->
+
+        <TextBlock Text="焦点位置:" Margin="10,0,0,0" Grid.Row="3" Grid.Column="0"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Text="{Binding _SelSlopeControlData.FocalPosition}" Margin="10,5,0,5" Width="160" Grid.Row="3" Grid.Column="1"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"  Background="Transparent" Foreground="Black"/>
+
+        <TextBlock Text="割嘴类型:" Margin="10,0,0,0" Grid.Row="4" Grid.Column="0"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Text="{Binding _SelSlopeControlData.CutterType}" Margin="10,5,0,5" Width="160" Grid.Row="4" Grid.Column="1"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"  Background="Transparent" Foreground="Black"/>
+
+        <TextBlock Text="割嘴内径:" Margin="10,0,0,0" Grid.Row="5" Grid.Column="0"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Text="{Binding _SelSlopeControlData.CutterDiameter}" Margin="10,5,0,5" Width="160" Grid.Row="5" Grid.Column="1"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"  Background="Transparent" Foreground="Black" IsEnabled="False"/>
+
+        <TextBlock Text="功率 最小:" Margin="10,0,0,0" Grid.Row="2" Grid.Column="2"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Text="{Binding _SelSlopeControlData.SlopeControl_PowerMin}" Margin="10,5,0,5" Width="160" Grid.Row="2" Grid.Column="3"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"  Background="Transparent" Foreground="Black"/>
+
+        <TextBlock Text="功率 速度0:" Margin="10,0,0,0" Grid.Row="3" Grid.Column="2"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Text="{Binding _SelSlopeControlData.SlopeControl_PwrSpZr}" Margin="10,5,0,5" Width="160" Grid.Row="3" Grid.Column="3"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"  Background="Transparent" Foreground="Black"/>
+
+        <TextBlock Text="频率 最小:" Margin="10,0,0,0" Grid.Row="4" Grid.Column="2"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Text="{Binding _SelSlopeControlData.SlopeControl_FreqMin}" Margin="10,5,0,5" Width="160" Grid.Row="4" Grid.Column="3"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"  Background="Transparent" Foreground="Black"/>
+
+        <TextBlock Text="频率 速度0:" Margin="10,0,0,0" Grid.Row="5" Grid.Column="2"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Text="{Binding _SelSlopeControlData.SlopeControl_FreqSpZr}" Margin="10,5,0,5" Width="160" Grid.Row="5" Grid.Column="3"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"  Background="Transparent" Foreground="Black"/>
+
+        <TextBlock Text="占空比 最小:" Margin="10,0,0,0" Grid.Row="6" Grid.Column="2"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Text="{Binding _SelSlopeControlData.SlopeControl_DutyMin}" Margin="10,5,0,5" Width="160" Grid.Row="6" Grid.Column="3"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"  Background="Transparent" Foreground="Black"/>
+
+        <TextBlock Text="占空比 速度0:" Margin="10,0,0,0" Grid.Row="7" Grid.Column="2"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Text="{Binding _SelSlopeControlData.SlopeControl_DutySpZr}" Margin="10,5,0,5" Width="160" Grid.Row="7" Grid.Column="3"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"  Background="Transparent" Foreground="Black"/>
+
+        <TextBlock Text="占空比 速度0:" Margin="10,0,0,0" Grid.Row="8" Grid.Column="2"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Text="{Binding _SelSlopeControlData.SlopeControl_DutySpZr}" Margin="10,5,0,5" Width="160" Grid.Row="8" Grid.Column="3"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"  Background="Transparent" Foreground="Black"/>
+
+        <TextBlock Text="速度变化允许量:" Margin="10,0,0,0" Grid.Row="9" Grid.Column="2"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Text="{Binding _SelSlopeControlData.SlopeControl_FeedRDec}" Margin="10,5,0,5" Width="160" Grid.Row="9" Grid.Column="3"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"  Background="Transparent" Foreground="Black"/>
+
+        <StackPanel Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+            <TextBlock Text="{Binding _Notice}" Margin="0,0,0,5"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="Red"/>
+            <StackPanel  HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button Style="{StaticResource btn-primary}" Margin="0,0,20,0" Content="应用" Command="{Binding _ApplicateCmd}"/>
+                <Button Style="{StaticResource btn-success}" Content="保存" Command="{Binding _SaveCmd}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

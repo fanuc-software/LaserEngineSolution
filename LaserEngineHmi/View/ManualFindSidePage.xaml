@@ -1,0 +1,162 @@
+﻿<Page x:Class="LaserEngineHmi.View.ManualFindSidePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      xmlns:local="clr-namespace:LaserEngineHmi.View"
+      xmlns:conv="clr-namespace:LaserEngineHmi.View.Converters"
+      xmlns:myControl="clr-namespace:LaserEngineHmi.View.Controls"
+      mc:Ignorable="d" 
+      Width="624" Height="528" Background="#FF323232"
+      Title="ManualFindSidePage">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadPageCommand}"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnLoadPageCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Page.Resources>
+        <conv:BoolToColorConverter x:Key="_b2c"/>
+    </Page.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="260"/>
+            <RowDefinition Height="180"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" BorderBrush="#FF323232" BorderThickness="0" Background="Transparent">
+                <Image Margin="10" Source="/LaserEngineHmi;component/Resources/images/mfs.png"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="板材原点X" Margin="10,0,0,0"
+                       HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+                    <TextBlock Grid.Column="1" Text="当前有效" Margin="10,0,0,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="8" Foreground="White"/>
+                    <TextBlock Grid.Column="2" Text="{Binding ManualFindSide_Info.XD}" Margin="10,0,0,0"
+                       HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="8" Foreground="White"/>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="板材原点Y" Margin="10,0,0,0"
+                       HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+                    <TextBlock Grid.Column="1" Text="当前有效" Margin="10,0,0,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="8" Foreground="White"/>
+                    <TextBlock Grid.Column="2" Text="{Binding ManualFindSide_Info.YD}" Margin="10,0,0,0"
+                       HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="8" Foreground="White"/>
+                </Grid>
+
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="倾斜角度" Margin="10,0,0,0"
+                       HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+                    <TextBlock Grid.Column="1" Text="当前有效" Margin="10,0,0,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="8" Foreground="White"/>
+                    <TextBlock Grid.Column="2" Text="{Binding ManualFindSide_Info.SITA}" Margin="10,0,0,0"
+                       HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="8" Foreground="White"/>
+                </Grid>
+                
+                <TextBox Grid.Row="2" HorizontalAlignment="Left" Margin="10,5,0,5" Width="230" Background="Transparent"
+                     Text="{Binding WpZeroX}" Foreground="Yellow" IsReadOnly="True" IsEnabled="False"/>
+                <TextBox Grid.Row="4" HorizontalAlignment="Left" Margin="10,5,0,5" Width="230" Background="Transparent"
+                     Text="{Binding WpZeroY}" Foreground="Yellow" IsReadOnly="True" IsEnabled="False"/>
+                <TextBox Grid.Row="6" HorizontalAlignment="Left" Margin="10,5,0,5" Width="230" Background="Transparent"
+                     Text="{Binding WpAngle}" Foreground="Yellow" IsReadOnly="True" IsEnabled="False"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{DynamicResource MACHINE_MENU_REMAINCUT_POINTTABLE}" Margin="10"
+                               HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="X 坐标" Margin="10"
+                               HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="Y 坐标" Margin="10"
+                               HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="坐标读取" Margin="10"
+                               HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="P1" Margin="10"
+                               HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="P2" Margin="10"
+                               HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="P3" Margin="10"
+                               HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding P1_X}" Margin="10"
+                               HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="Yellow"/>
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding P1_Y}" Margin="10"
+                               HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="Yellow"/>
+            <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding P2_X}" Margin="10"
+                               HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="Yellow"/>
+            <TextBlock Grid.Row="2" Grid.Column="3" Text="{Binding P2_Y}" Margin="10"
+                               HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="Yellow"/>
+            <TextBlock Grid.Row="3" Grid.Column="2" Text="{Binding P3_X}" Margin="10"
+                               HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="Yellow"/>
+            <TextBlock Grid.Row="3" Grid.Column="3" Text="{Binding P3_Y}" Margin="10"
+                               HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="Yellow"/>
+
+            <Button Grid.Row="1" Grid.Column="4" Margin="5" Style="{StaticResource btn-primary}" Background="{Binding P1Clicked,Converter={StaticResource _b2c}}"
+                        Content="P1读取" Command="{Binding GetP1Command}"/>
+            <Button Grid.Row="2" Grid.Column="4" Margin="5" Style="{StaticResource btn-primary}" Background="{Binding P2Clicked,Converter={StaticResource _b2c}}"
+                        Content="P2读取" Command="{Binding GetP2Command}"/>
+            <Button Grid.Row="3" Grid.Column="4" Margin="5" Style="{StaticResource btn-primary}" Background="{Binding P3Clicked,Converter={StaticResource _b2c}}"
+                        Content="P3读取" Command="{Binding GetP3Command}"/>
+        </Grid>
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <Button  Width="180" Height="60" VerticalAlignment="Center" Content="清空" 
+                        HorizontalAlignment="Center" Style="{StaticResource MachineMainExcButton}" Command="{Binding ResetCmd}"/>
+            <Button  Width="180" Height="60" VerticalAlignment="Center" Content="加载" Margin="20,0,0,0" 
+                        HorizontalAlignment="Center" Style="{StaticResource MachineMainExcButton}" Command="{Binding LoadCmd}"/>
+            <Button  Width="180" Height="60" VerticalAlignment="Center" Content="测试程序" Margin="20,0,0,0" 
+                        HorizontalAlignment="Center" Style="{StaticResource MachineMainExcButton}" Command="{Binding TestCmd}"/>
+        </StackPanel>
+    </Grid>
+</Page>

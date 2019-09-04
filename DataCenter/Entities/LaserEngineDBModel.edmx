@@ -1,0 +1,1092 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LaserEngineDBModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\ProgramData\BFM\LaserEngineDB.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LibInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="Version" Type="varchar" MaxLength="20" />
+          <Property Name="UpdataDateTime" Type="datetime" />
+          <Property Name="UpDataPerson" Type="varchar" MaxLength="20" />
+          <Property Name="Description" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="MachiningLib_Cutting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ENO" Type="smallint" Nullable="false" />
+          <Property Name="MachiningType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialThickness" Type="real" Nullable="false" />
+          <Property Name="FocalDistance" Type="real" Nullable="false" />
+          <Property Name="FocalPosition" Type="real" Nullable="false" />
+          <Property Name="CutterType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="CutterDiameter" Type="real" Nullable="false" />
+          <Property Name="Cutting_Feed" Type="real" Nullable="false" />
+          <Property Name="Cutting_Power" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_Freq" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_Duty" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_G_Press" Type="real" Nullable="false" />
+          <Property Name="Cutting_G_Kind" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_G_Ready_T" Type="real" Nullable="false" />
+          <Property Name="Cutting_Displace" Type="real" Nullable="false" />
+          <Property Name="Cutting_Supple" Type="real" Nullable="false" />
+          <Property Name="Cutting_Edge_Slt" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_Appr_Slt" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_Pwr_Ctrl" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_Displace_2" Type="real" Nullable="false" />
+          <Property Name="Cutting_Gap_Axis" Type="char" MaxLength="50" />
+          <Property Name="Cutting_Feed_Dec" Type="char" MaxLength="50" />
+          <Property Name="Cutting_Supple_Dec" Type="char" MaxLength="50" />
+          <Property Name="Cutting_Dsp2_Dec" Type="char" MaxLength="50" />
+          <Property Name="Cutting_Reverse_Info_1" Type="char" MaxLength="300" />
+          <Property Name="Cutting_Reserve_Info_2" Type="char" MaxLength="300" />
+          <Property Name="Cutting_Reserve_Info_3" Type="char" MaxLength="300" />
+          <Property Name="BEAMSPOT" Type="real" />
+          <Property Name="LIFTDIST" Type="real" />
+        </EntityType>
+        <EntityType Name="MachiningLib_EdgeCutting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NO" Type="smallint" Nullable="false" />
+          <Property Name="MachiningType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialThickness" Type="real" Nullable="false" />
+          <Property Name="FocalDistance" Type="real" Nullable="false" />
+          <Property Name="FocalPosition" Type="real" Nullable="false" />
+          <Property Name="CutterType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="CutterDiameter" Type="real" Nullable="false" />
+          <Property Name="EdgeCutting_Angle" Type="real" Nullable="false" />
+          <Property Name="EdgeCutting_Power" Type="smallint" Nullable="false" />
+          <Property Name="EdgeCutting_Freq" Type="smallint" Nullable="false" />
+          <Property Name="EdgeCutting_Duty" Type="smallint" Nullable="false" />
+          <Property Name="EdgeCutting_Pier_T" Type="real" Nullable="false" />
+          <Property Name="EdgeCutting_G_Press" Type="real" Nullable="false" />
+          <Property Name="EdgeCutting_G_Kind" Type="smallint" Nullable="false" />
+          <Property Name="EdgeCutting_R_Len" Type="real" Nullable="false" />
+          <Property Name="EdgeCutting_R_Feed" Type="real" Nullable="false" />
+          <Property Name="EdgeCutting_R_Freq" Type="smallint" Nullable="false" />
+          <Property Name="EdgeCutting_R_Duty" Type="smallint" Nullable="false" />
+          <Property Name="EdgeCutting_Gap" Type="real" Nullable="false" />
+          <Property Name="EdgeCutting_Reserve_1" Type="smallint" />
+          <Property Name="EdgeCutting_Reserve_2" Type="smallint" />
+          <Property Name="EdgeCutting_Reserve_3" Type="smallint" />
+          <Property Name="EdgeCutting_Reserve_4" Type="smallint" />
+          <Property Name="EdgeCutting_Reserve_Info_1" Type="char" MaxLength="300" />
+          <Property Name="EdgeCutting_Reserve_Info_2" Type="char" MaxLength="300" />
+          <Property Name="EdgeCutting_Reserve_Info_3" Type="char" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="MachiningLib_Material">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="Thickness" Type="real" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MachiningLib_Piercing">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ENO" Type="smallint" Nullable="false" />
+          <Property Name="MachiningType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialThickness" Type="real" Nullable="false" />
+          <Property Name="FocalDistance" Type="real" Nullable="false" />
+          <Property Name="FocalPosition" Type="real" Nullable="false" />
+          <Property Name="CutterType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="CutterDiameter" Type="real" Nullable="false" />
+          <Property Name="Piercing_Power" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_Freq" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_Duty" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_I_Freq" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_I_Duty" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_Step_T" Type="real" Nullable="false" />
+          <Property Name="Piercing_Step_Sum" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_Pier_T" Type="real" Nullable="false" />
+          <Property Name="Piercing_G_Press" Type="real" Nullable="false" />
+          <Property Name="Piercing_G_Kind" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_G_Time" Type="real" Nullable="false" />
+          <Property Name="Piercing_Def_Pos" Type="real" Nullable="false" />
+          <Property Name="Piercing_Def_Pos2" Type="real" Nullable="false" />
+          <Property Name="Piercing_Gap_Axis" Type="char" MaxLength="50" />
+          <Property Name="Piercing_Def_Pos2_Dec" Type="char" MaxLength="50" />
+          <Property Name="Piercing_Reserve_Info_1" Type="char" MaxLength="300" />
+          <Property Name="Piercing_Reserve_Info_2" Type="char" MaxLength="300" />
+          <Property Name="Piercing_Reserve_Info_3" Type="char" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="MachiningLib_SlopeControl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NO" Type="smallint" Nullable="false" />
+          <Property Name="MachiningType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialThickness" Type="real" Nullable="false" />
+          <Property Name="FocalDistance" Type="real" Nullable="false" />
+          <Property Name="FocalPosition" Type="real" Nullable="false" />
+          <Property Name="CutterType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="CutterDiameter" Type="real" Nullable="false" />
+          <Property Name="SlopeControl_PowerMin" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_PwrSpZr" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_FreqMin" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_FreqSpZr" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_DutyMin" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_DutySpZr" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_FeedRDec" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_FeedR" Type="real" Nullable="false" />
+          <Property Name="SlopeControl_Reserve_1" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_Reserve_2" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_3" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_4" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_5" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_6" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_7" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_8" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_9" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_10" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_Info_1" Type="char" MaxLength="300" />
+          <Property Name="SlopeControl_Reserve_Info_2" Type="char" MaxLength="300" />
+          <Property Name="SlopeControl_Reserve_Info_3" Type="char" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="ManualInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" />
+          <Property Name="Specification" Type="varchar" MaxLength="200" />
+          <Property Name="Version" Type="varchar" MaxLength="20" />
+          <Property Name="Path" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="RootMachiningLib_Cutting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ENO" Type="smallint" Nullable="false" />
+          <Property Name="MachiningType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialThickness" Type="real" Nullable="false" />
+          <Property Name="FocalDistance" Type="real" Nullable="false" />
+          <Property Name="FocalPosition" Type="real" Nullable="false" />
+          <Property Name="CutterType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="CutterDiameter" Type="real" Nullable="false" />
+          <Property Name="Cutting_Feed" Type="integer" Nullable="false" />
+          <Property Name="Cutting_Power" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_Freq" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_Duty" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_G_Press" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_G_Kind" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_G_Ready_T" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_Displace" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_Supple" Type="integer" Nullable="false" />
+          <Property Name="Cutting_Edge_Slt" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_Appr_Slt" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_Pwr_Ctrl" Type="smallint" Nullable="false" />
+          <Property Name="Cutting_Displace_2" Type="integer" />
+          <Property Name="Cutting_Gap_Axis" Type="char" MaxLength="50" />
+          <Property Name="Cutting_Feed_Dec" Type="char" MaxLength="50" />
+          <Property Name="Cutting_Supple_Dec" Type="char" MaxLength="50" />
+          <Property Name="Cutting_Dsp2_Dec" Type="char" MaxLength="50" />
+          <Property Name="Cutting_Reverse_Info_1" Type="char" MaxLength="300" />
+          <Property Name="Cutting_Reserve_Info_2" Type="char" MaxLength="300" />
+          <Property Name="Cutting_Reserve_Info_3" Type="char" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="RootMachiningLib_EdgeCutting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="NO" Type="smallint" Nullable="false" />
+          <Property Name="MachiningType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialThickness" Type="real" Nullable="false" />
+          <Property Name="FocalDistance" Type="real" Nullable="false" />
+          <Property Name="FocalPosition" Type="real" Nullable="false" />
+          <Property Name="CutterType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="CutterDiameter" Type="real" Nullable="false" />
+          <Property Name="EdgeCutting_Angle" Type="integer" Nullable="false" />
+          <Property Name="EdgeCutting_Power" Type="smallint" Nullable="false" />
+          <Property Name="EdgeCutting_Freq" Type="smallint" Nullable="false" />
+          <Property Name="EdgeCutting_Duty" Type="smallint" Nullable="false" />
+          <Property Name="EdgeCutting_Pier_T" Type="integer" Nullable="false" />
+          <Property Name="EdgeCutting_G_Press" Type="smallint" Nullable="false" />
+          <Property Name="EdgeCutting_G_Kind" Type="smallint" Nullable="false" />
+          <Property Name="EdgeCutting_R_Len" Type="integer" Nullable="false" />
+          <Property Name="EdgeCutting_R_Feed" Type="integer" Nullable="false" />
+          <Property Name="EdgeCutting_R_Freq" Type="smallint" Nullable="false" />
+          <Property Name="EdgeCutting_R_Duty" Type="smallint" Nullable="false" />
+          <Property Name="EdgeCutting_Gap" Type="integer" Nullable="false" />
+          <Property Name="EdgeCutting_Reserve_1" Type="smallint" />
+          <Property Name="EdgeCutting_Reserve_2" Type="smallint" />
+          <Property Name="EdgeCutting_Reserve_3" Type="smallint" />
+          <Property Name="EdgeCutting_Reserve_4" Type="smallint" />
+          <Property Name="EdgeCutting_Reserve_Info_1" Type="char" MaxLength="300" />
+          <Property Name="EdgeCutting_Reserve_Info_2" Type="char" MaxLength="300" />
+          <Property Name="EdgeCutting_Reserve_Info_3" Type="char" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="RootMachiningLib_Material">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="Thickness" Type="real" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RootMachiningLib_Piercing">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ENO" Type="smallint" Nullable="false" />
+          <Property Name="MachiningType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialThickness" Type="real" Nullable="false" />
+          <Property Name="FocalDistance" Type="real" Nullable="false" />
+          <Property Name="FocalPosition" Type="real" Nullable="false" />
+          <Property Name="CutterType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="CutterDiameter" Type="real" Nullable="false" />
+          <Property Name="Piercing_Power" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_Freq" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_Duty" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_I_Freq" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_I_Duty" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_Step_T" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_Step_Sum" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_Pier_T" Type="integer" Nullable="false" />
+          <Property Name="Piercing_G_Press" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_G_Kind" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_G_Time" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_Def_Pos" Type="smallint" Nullable="false" />
+          <Property Name="Piercing_Def_Pos2" Type="integer" />
+          <Property Name="Piercing_Gap_Axis" Type="char" MaxLength="50" />
+          <Property Name="Piercing_Def_Pos2_Dec" Type="char" MaxLength="50" />
+          <Property Name="Piercing_Reserve_Info_1" Type="char" MaxLength="300" />
+          <Property Name="Piercing_Reserve_Info_2" Type="char" MaxLength="300" />
+          <Property Name="Piercing_Reserve_Info_3" Type="char" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="RootMachiningLib_SlopeControl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="NO" Type="smallint" Nullable="false" />
+          <Property Name="MachiningType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialThickness" Type="real" Nullable="false" />
+          <Property Name="FocalDistance" Type="real" Nullable="false" />
+          <Property Name="FocalPosition" Type="real" Nullable="false" />
+          <Property Name="CutterType" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="CutterDiameter" Type="real" Nullable="false" />
+          <Property Name="SlopeControl_PowerMin" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_PwrSpZr" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_FreqMin" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_FreqSpZr" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_DutyMin" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_DutySpZr" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_FeedRDec" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_FeedR" Type="integer" Nullable="false" />
+          <Property Name="SlopeControl_Reserve_1" Type="smallint" Nullable="false" />
+          <Property Name="SlopeControl_Reserve_2" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_3" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_4" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_5" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_6" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_7" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_8" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_9" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_10" Type="smallint" />
+          <Property Name="SlopeControl_Reserve_Info_1" Type="char" MaxLength="300" />
+          <Property Name="SlopeControl_Reserve_Info_2" Type="char" MaxLength="300" />
+          <Property Name="SlopeControl_Reserve_Info_3" Type="char" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="SparePart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="Specification" Type="varchar" MaxLength="20" />
+          <Property Name="Position" Type="varchar" MaxLength="20" />
+          <Property Name="Remark" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="Password" Type="varchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsAuth" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="LaserEngineDBModelStoreContainer">
+          <EntitySet Name="LibInfo" EntityType="Self.LibInfo" store:Type="Tables" />
+          <EntitySet Name="MachiningLib_Cutting" EntityType="Self.MachiningLib_Cutting" store:Type="Tables" />
+          <EntitySet Name="MachiningLib_EdgeCutting" EntityType="Self.MachiningLib_EdgeCutting" store:Type="Tables" />
+          <EntitySet Name="MachiningLib_Material" EntityType="Self.MachiningLib_Material" store:Type="Tables" />
+          <EntitySet Name="MachiningLib_Piercing" EntityType="Self.MachiningLib_Piercing" store:Type="Tables" />
+          <EntitySet Name="MachiningLib_SlopeControl" EntityType="Self.MachiningLib_SlopeControl" store:Type="Tables" />
+          <EntitySet Name="ManualInfo" EntityType="Self.ManualInfo" store:Type="Tables" />
+          <EntitySet Name="RootMachiningLib_Cutting" EntityType="Self.RootMachiningLib_Cutting" store:Type="Tables" />
+          <EntitySet Name="RootMachiningLib_EdgeCutting" EntityType="Self.RootMachiningLib_EdgeCutting" store:Type="Tables" />
+          <EntitySet Name="RootMachiningLib_Material" EntityType="Self.RootMachiningLib_Material" store:Type="Tables" />
+          <EntitySet Name="RootMachiningLib_Piercing" EntityType="Self.RootMachiningLib_Piercing" store:Type="Tables" />
+          <EntitySet Name="RootMachiningLib_SlopeControl" EntityType="Self.RootMachiningLib_SlopeControl" store:Type="Tables" />
+          <EntitySet Name="SparePart" EntityType="Self.SparePart" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" />
+          <EntitySet Name="UserRole" EntityType="Self.UserRole" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LaserEngineDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LaserEngineDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LibInfo" EntityType="LaserEngineDBModel.LibInfo" />
+          <EntitySet Name="MachiningLib_Cutting" EntityType="LaserEngineDBModel.MachiningLib_Cutting" />
+          <EntitySet Name="MachiningLib_EdgeCutting" EntityType="LaserEngineDBModel.MachiningLib_EdgeCutting" />
+          <EntitySet Name="MachiningLib_Material" EntityType="LaserEngineDBModel.MachiningLib_Material" />
+          <EntitySet Name="MachiningLib_Piercing" EntityType="LaserEngineDBModel.MachiningLib_Piercing" />
+          <EntitySet Name="MachiningLib_SlopeControl" EntityType="LaserEngineDBModel.MachiningLib_SlopeControl" />
+          <EntitySet Name="ManualInfo" EntityType="LaserEngineDBModel.ManualInfo" />
+          <EntitySet Name="RootMachiningLib_Cutting" EntityType="LaserEngineDBModel.RootMachiningLib_Cutting" />
+          <EntitySet Name="RootMachiningLib_EdgeCutting" EntityType="LaserEngineDBModel.RootMachiningLib_EdgeCutting" />
+          <EntitySet Name="RootMachiningLib_Material" EntityType="LaserEngineDBModel.RootMachiningLib_Material" />
+          <EntitySet Name="RootMachiningLib_Piercing" EntityType="LaserEngineDBModel.RootMachiningLib_Piercing" />
+          <EntitySet Name="RootMachiningLib_SlopeControl" EntityType="LaserEngineDBModel.RootMachiningLib_SlopeControl" />
+          <EntitySet Name="SparePart" EntityType="LaserEngineDBModel.SparePart" />
+          <EntitySet Name="User" EntityType="LaserEngineDBModel.User" />
+          <EntitySet Name="UserRole" EntityType="LaserEngineDBModel.UserRole" />
+        </EntityContainer>
+        <EntityType Name="LibInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Version" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UpdataDateTime" Type="DateTime" />
+          <Property Name="UpDataPerson" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MachiningLib_Cutting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ENO" Type="Int16" Nullable="false" />
+          <Property Name="MachiningType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialThickness" Type="Double" Nullable="false" />
+          <Property Name="FocalDistance" Type="Double" Nullable="false" />
+          <Property Name="FocalPosition" Type="Double" Nullable="false" />
+          <Property Name="CutterType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="CutterDiameter" Type="Double" Nullable="false" />
+          <Property Name="Cutting_Feed" Type="Double" Nullable="false" />
+          <Property Name="Cutting_Power" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_Freq" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_Duty" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_G_Press" Type="Double" Nullable="false" />
+          <Property Name="Cutting_G_Kind" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_G_Ready_T" Type="Double" Nullable="false" />
+          <Property Name="Cutting_Displace" Type="Double" Nullable="false" />
+          <Property Name="Cutting_Supple" Type="Double" Nullable="false" />
+          <Property Name="Cutting_Edge_Slt" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_Appr_Slt" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_Pwr_Ctrl" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_Displace_2" Type="Double" Nullable="false" />
+          <Property Name="Cutting_Gap_Axis" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Cutting_Feed_Dec" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Cutting_Supple_Dec" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Cutting_Dsp2_Dec" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Cutting_Reverse_Info_1" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="Cutting_Reserve_Info_2" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="Cutting_Reserve_Info_3" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="BEAMSPOT" Type="Double" />
+          <Property Name="LIFTDIST" Type="Double" />
+        </EntityType>
+        <EntityType Name="MachiningLib_EdgeCutting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NO" Type="Int16" Nullable="false" />
+          <Property Name="MachiningType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialThickness" Type="Double" Nullable="false" />
+          <Property Name="FocalDistance" Type="Double" Nullable="false" />
+          <Property Name="FocalPosition" Type="Double" Nullable="false" />
+          <Property Name="CutterType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="CutterDiameter" Type="Double" Nullable="false" />
+          <Property Name="EdgeCutting_Angle" Type="Double" Nullable="false" />
+          <Property Name="EdgeCutting_Power" Type="Int16" Nullable="false" />
+          <Property Name="EdgeCutting_Freq" Type="Int16" Nullable="false" />
+          <Property Name="EdgeCutting_Duty" Type="Int16" Nullable="false" />
+          <Property Name="EdgeCutting_Pier_T" Type="Double" Nullable="false" />
+          <Property Name="EdgeCutting_G_Press" Type="Double" Nullable="false" />
+          <Property Name="EdgeCutting_G_Kind" Type="Int16" Nullable="false" />
+          <Property Name="EdgeCutting_R_Len" Type="Double" Nullable="false" />
+          <Property Name="EdgeCutting_R_Feed" Type="Double" Nullable="false" />
+          <Property Name="EdgeCutting_R_Freq" Type="Int16" Nullable="false" />
+          <Property Name="EdgeCutting_R_Duty" Type="Int16" Nullable="false" />
+          <Property Name="EdgeCutting_Gap" Type="Double" Nullable="false" />
+          <Property Name="EdgeCutting_Reserve_1" Type="Int16" />
+          <Property Name="EdgeCutting_Reserve_2" Type="Int16" />
+          <Property Name="EdgeCutting_Reserve_3" Type="Int16" />
+          <Property Name="EdgeCutting_Reserve_4" Type="Int16" />
+          <Property Name="EdgeCutting_Reserve_Info_1" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="EdgeCutting_Reserve_Info_2" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="EdgeCutting_Reserve_Info_3" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MachiningLib_Material">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Thickness" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MachiningLib_Piercing">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ENO" Type="Int16" Nullable="false" />
+          <Property Name="MachiningType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialThickness" Type="Double" Nullable="false" />
+          <Property Name="FocalDistance" Type="Double" Nullable="false" />
+          <Property Name="FocalPosition" Type="Double" Nullable="false" />
+          <Property Name="CutterType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="CutterDiameter" Type="Double" Nullable="false" />
+          <Property Name="Piercing_Power" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_Freq" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_Duty" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_I_Freq" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_I_Duty" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_Step_T" Type="Double" Nullable="false" />
+          <Property Name="Piercing_Step_Sum" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_Pier_T" Type="Double" Nullable="false" />
+          <Property Name="Piercing_G_Press" Type="Double" Nullable="false" />
+          <Property Name="Piercing_G_Kind" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_G_Time" Type="Double" Nullable="false" />
+          <Property Name="Piercing_Def_Pos" Type="Double" Nullable="false" />
+          <Property Name="Piercing_Def_Pos2" Type="Double" Nullable="false" />
+          <Property Name="Piercing_Gap_Axis" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Piercing_Def_Pos2_Dec" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Piercing_Reserve_Info_1" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="Piercing_Reserve_Info_2" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="Piercing_Reserve_Info_3" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MachiningLib_SlopeControl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NO" Type="Int16" Nullable="false" />
+          <Property Name="MachiningType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialThickness" Type="Double" Nullable="false" />
+          <Property Name="FocalDistance" Type="Double" Nullable="false" />
+          <Property Name="FocalPosition" Type="Double" Nullable="false" />
+          <Property Name="CutterType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="CutterDiameter" Type="Double" Nullable="false" />
+          <Property Name="SlopeControl_PowerMin" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_PwrSpZr" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_FreqMin" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_FreqSpZr" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_DutyMin" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_DutySpZr" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_FeedRDec" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_FeedR" Type="Double" Nullable="false" />
+          <Property Name="SlopeControl_Reserve_1" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_Reserve_2" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_3" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_4" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_5" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_6" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_7" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_8" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_9" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_10" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_Info_1" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="SlopeControl_Reserve_Info_2" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="SlopeControl_Reserve_Info_3" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ManualInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Specification" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Version" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RootMachiningLib_Cutting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ENO" Type="Int16" Nullable="false" />
+          <Property Name="MachiningType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialThickness" Type="Double" Nullable="false" />
+          <Property Name="FocalDistance" Type="Double" Nullable="false" />
+          <Property Name="FocalPosition" Type="Double" Nullable="false" />
+          <Property Name="CutterType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="CutterDiameter" Type="Double" Nullable="false" />
+          <Property Name="Cutting_Feed" Type="Int64" Nullable="false" />
+          <Property Name="Cutting_Power" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_Freq" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_Duty" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_G_Press" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_G_Kind" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_G_Ready_T" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_Displace" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_Supple" Type="Int64" Nullable="false" />
+          <Property Name="Cutting_Edge_Slt" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_Appr_Slt" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_Pwr_Ctrl" Type="Int16" Nullable="false" />
+          <Property Name="Cutting_Displace_2" Type="Int64" />
+          <Property Name="Cutting_Gap_Axis" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Cutting_Feed_Dec" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Cutting_Supple_Dec" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Cutting_Dsp2_Dec" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Cutting_Reverse_Info_1" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="Cutting_Reserve_Info_2" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="Cutting_Reserve_Info_3" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RootMachiningLib_EdgeCutting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="NO" Type="Int16" Nullable="false" />
+          <Property Name="MachiningType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialThickness" Type="Double" Nullable="false" />
+          <Property Name="FocalDistance" Type="Double" Nullable="false" />
+          <Property Name="FocalPosition" Type="Double" Nullable="false" />
+          <Property Name="CutterType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="CutterDiameter" Type="Double" Nullable="false" />
+          <Property Name="EdgeCutting_Angle" Type="Int64" Nullable="false" />
+          <Property Name="EdgeCutting_Power" Type="Int16" Nullable="false" />
+          <Property Name="EdgeCutting_Freq" Type="Int16" Nullable="false" />
+          <Property Name="EdgeCutting_Duty" Type="Int16" Nullable="false" />
+          <Property Name="EdgeCutting_Pier_T" Type="Int64" Nullable="false" />
+          <Property Name="EdgeCutting_G_Press" Type="Int16" Nullable="false" />
+          <Property Name="EdgeCutting_G_Kind" Type="Int16" Nullable="false" />
+          <Property Name="EdgeCutting_R_Len" Type="Int64" Nullable="false" />
+          <Property Name="EdgeCutting_R_Feed" Type="Int64" Nullable="false" />
+          <Property Name="EdgeCutting_R_Freq" Type="Int16" Nullable="false" />
+          <Property Name="EdgeCutting_R_Duty" Type="Int16" Nullable="false" />
+          <Property Name="EdgeCutting_Gap" Type="Int64" Nullable="false" />
+          <Property Name="EdgeCutting_Reserve_1" Type="Int16" />
+          <Property Name="EdgeCutting_Reserve_2" Type="Int16" />
+          <Property Name="EdgeCutting_Reserve_3" Type="Int16" />
+          <Property Name="EdgeCutting_Reserve_4" Type="Int16" />
+          <Property Name="EdgeCutting_Reserve_Info_1" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="EdgeCutting_Reserve_Info_2" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="EdgeCutting_Reserve_Info_3" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RootMachiningLib_Material">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Thickness" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RootMachiningLib_Piercing">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ENO" Type="Int16" Nullable="false" />
+          <Property Name="MachiningType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialThickness" Type="Double" Nullable="false" />
+          <Property Name="FocalDistance" Type="Double" Nullable="false" />
+          <Property Name="FocalPosition" Type="Double" Nullable="false" />
+          <Property Name="CutterType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="CutterDiameter" Type="Double" Nullable="false" />
+          <Property Name="Piercing_Power" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_Freq" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_Duty" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_I_Freq" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_I_Duty" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_Step_T" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_Step_Sum" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_Pier_T" Type="Int64" Nullable="false" />
+          <Property Name="Piercing_G_Press" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_G_Kind" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_G_Time" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_Def_Pos" Type="Int16" Nullable="false" />
+          <Property Name="Piercing_Def_Pos2" Type="Int64" />
+          <Property Name="Piercing_Gap_Axis" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Piercing_Def_Pos2_Dec" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Piercing_Reserve_Info_1" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="Piercing_Reserve_Info_2" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="Piercing_Reserve_Info_3" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RootMachiningLib_SlopeControl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="NO" Type="Int16" Nullable="false" />
+          <Property Name="MachiningType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="MaterialThickness" Type="Double" Nullable="false" />
+          <Property Name="FocalDistance" Type="Double" Nullable="false" />
+          <Property Name="FocalPosition" Type="Double" Nullable="false" />
+          <Property Name="CutterType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="CutterDiameter" Type="Double" Nullable="false" />
+          <Property Name="SlopeControl_PowerMin" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_PwrSpZr" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_FreqMin" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_FreqSpZr" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_DutyMin" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_DutySpZr" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_FeedRDec" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_FeedR" Type="Int64" Nullable="false" />
+          <Property Name="SlopeControl_Reserve_1" Type="Int16" Nullable="false" />
+          <Property Name="SlopeControl_Reserve_2" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_3" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_4" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_5" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_6" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_7" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_8" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_9" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_10" Type="Int16" />
+          <Property Name="SlopeControl_Reserve_Info_1" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="SlopeControl_Reserve_Info_2" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+          <Property Name="SlopeControl_Reserve_Info_3" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SparePart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Specification" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Position" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsAuth" Type="Boolean" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LaserEngineDBModelStoreContainer" CdmEntityContainer="LaserEngineDBEntities">
+          <EntitySetMapping Name="LibInfo">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.LibInfo">
+              <MappingFragment StoreEntitySet="LibInfo">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UpDataPerson" ColumnName="UpDataPerson" />
+                <ScalarProperty Name="UpdataDateTime" ColumnName="UpdataDateTime" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MachiningLib_Cutting">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.MachiningLib_Cutting">
+              <MappingFragment StoreEntitySet="MachiningLib_Cutting">
+                <ScalarProperty Name="LIFTDIST" ColumnName="LIFTDIST" />
+                <ScalarProperty Name="BEAMSPOT" ColumnName="BEAMSPOT" />
+                <ScalarProperty Name="Cutting_Reserve_Info_3" ColumnName="Cutting_Reserve_Info_3" />
+                <ScalarProperty Name="Cutting_Reserve_Info_2" ColumnName="Cutting_Reserve_Info_2" />
+                <ScalarProperty Name="Cutting_Reverse_Info_1" ColumnName="Cutting_Reverse_Info_1" />
+                <ScalarProperty Name="Cutting_Dsp2_Dec" ColumnName="Cutting_Dsp2_Dec" />
+                <ScalarProperty Name="Cutting_Supple_Dec" ColumnName="Cutting_Supple_Dec" />
+                <ScalarProperty Name="Cutting_Feed_Dec" ColumnName="Cutting_Feed_Dec" />
+                <ScalarProperty Name="Cutting_Gap_Axis" ColumnName="Cutting_Gap_Axis" />
+                <ScalarProperty Name="Cutting_Displace_2" ColumnName="Cutting_Displace_2" />
+                <ScalarProperty Name="Cutting_Pwr_Ctrl" ColumnName="Cutting_Pwr_Ctrl" />
+                <ScalarProperty Name="Cutting_Appr_Slt" ColumnName="Cutting_Appr_Slt" />
+                <ScalarProperty Name="Cutting_Edge_Slt" ColumnName="Cutting_Edge_Slt" />
+                <ScalarProperty Name="Cutting_Supple" ColumnName="Cutting_Supple" />
+                <ScalarProperty Name="Cutting_Displace" ColumnName="Cutting_Displace" />
+                <ScalarProperty Name="Cutting_G_Ready_T" ColumnName="Cutting_G_Ready_T" />
+                <ScalarProperty Name="Cutting_G_Kind" ColumnName="Cutting_G_Kind" />
+                <ScalarProperty Name="Cutting_G_Press" ColumnName="Cutting_G_Press" />
+                <ScalarProperty Name="Cutting_Duty" ColumnName="Cutting_Duty" />
+                <ScalarProperty Name="Cutting_Freq" ColumnName="Cutting_Freq" />
+                <ScalarProperty Name="Cutting_Power" ColumnName="Cutting_Power" />
+                <ScalarProperty Name="Cutting_Feed" ColumnName="Cutting_Feed" />
+                <ScalarProperty Name="CutterDiameter" ColumnName="CutterDiameter" />
+                <ScalarProperty Name="CutterType" ColumnName="CutterType" />
+                <ScalarProperty Name="FocalPosition" ColumnName="FocalPosition" />
+                <ScalarProperty Name="FocalDistance" ColumnName="FocalDistance" />
+                <ScalarProperty Name="MaterialThickness" ColumnName="MaterialThickness" />
+                <ScalarProperty Name="MaterialType" ColumnName="MaterialType" />
+                <ScalarProperty Name="MachiningType" ColumnName="MachiningType" />
+                <ScalarProperty Name="ENO" ColumnName="ENO" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MachiningLib_EdgeCutting">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.MachiningLib_EdgeCutting">
+              <MappingFragment StoreEntitySet="MachiningLib_EdgeCutting">
+                <ScalarProperty Name="EdgeCutting_Reserve_Info_3" ColumnName="EdgeCutting_Reserve_Info_3" />
+                <ScalarProperty Name="EdgeCutting_Reserve_Info_2" ColumnName="EdgeCutting_Reserve_Info_2" />
+                <ScalarProperty Name="EdgeCutting_Reserve_Info_1" ColumnName="EdgeCutting_Reserve_Info_1" />
+                <ScalarProperty Name="EdgeCutting_Reserve_4" ColumnName="EdgeCutting_Reserve_4" />
+                <ScalarProperty Name="EdgeCutting_Reserve_3" ColumnName="EdgeCutting_Reserve_3" />
+                <ScalarProperty Name="EdgeCutting_Reserve_2" ColumnName="EdgeCutting_Reserve_2" />
+                <ScalarProperty Name="EdgeCutting_Reserve_1" ColumnName="EdgeCutting_Reserve_1" />
+                <ScalarProperty Name="EdgeCutting_Gap" ColumnName="EdgeCutting_Gap" />
+                <ScalarProperty Name="EdgeCutting_R_Duty" ColumnName="EdgeCutting_R_Duty" />
+                <ScalarProperty Name="EdgeCutting_R_Freq" ColumnName="EdgeCutting_R_Freq" />
+                <ScalarProperty Name="EdgeCutting_R_Feed" ColumnName="EdgeCutting_R_Feed" />
+                <ScalarProperty Name="EdgeCutting_R_Len" ColumnName="EdgeCutting_R_Len" />
+                <ScalarProperty Name="EdgeCutting_G_Kind" ColumnName="EdgeCutting_G_Kind" />
+                <ScalarProperty Name="EdgeCutting_G_Press" ColumnName="EdgeCutting_G_Press" />
+                <ScalarProperty Name="EdgeCutting_Pier_T" ColumnName="EdgeCutting_Pier_T" />
+                <ScalarProperty Name="EdgeCutting_Duty" ColumnName="EdgeCutting_Duty" />
+                <ScalarProperty Name="EdgeCutting_Freq" ColumnName="EdgeCutting_Freq" />
+                <ScalarProperty Name="EdgeCutting_Power" ColumnName="EdgeCutting_Power" />
+                <ScalarProperty Name="EdgeCutting_Angle" ColumnName="EdgeCutting_Angle" />
+                <ScalarProperty Name="CutterDiameter" ColumnName="CutterDiameter" />
+                <ScalarProperty Name="CutterType" ColumnName="CutterType" />
+                <ScalarProperty Name="FocalPosition" ColumnName="FocalPosition" />
+                <ScalarProperty Name="FocalDistance" ColumnName="FocalDistance" />
+                <ScalarProperty Name="MaterialThickness" ColumnName="MaterialThickness" />
+                <ScalarProperty Name="MaterialType" ColumnName="MaterialType" />
+                <ScalarProperty Name="MachiningType" ColumnName="MachiningType" />
+                <ScalarProperty Name="NO" ColumnName="NO" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MachiningLib_Material">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.MachiningLib_Material">
+              <MappingFragment StoreEntitySet="MachiningLib_Material">
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MachiningLib_Piercing">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.MachiningLib_Piercing">
+              <MappingFragment StoreEntitySet="MachiningLib_Piercing">
+                <ScalarProperty Name="Piercing_Reserve_Info_3" ColumnName="Piercing_Reserve_Info_3" />
+                <ScalarProperty Name="Piercing_Reserve_Info_2" ColumnName="Piercing_Reserve_Info_2" />
+                <ScalarProperty Name="Piercing_Reserve_Info_1" ColumnName="Piercing_Reserve_Info_1" />
+                <ScalarProperty Name="Piercing_Def_Pos2_Dec" ColumnName="Piercing_Def_Pos2_Dec" />
+                <ScalarProperty Name="Piercing_Gap_Axis" ColumnName="Piercing_Gap_Axis" />
+                <ScalarProperty Name="Piercing_Def_Pos2" ColumnName="Piercing_Def_Pos2" />
+                <ScalarProperty Name="Piercing_Def_Pos" ColumnName="Piercing_Def_Pos" />
+                <ScalarProperty Name="Piercing_G_Time" ColumnName="Piercing_G_Time" />
+                <ScalarProperty Name="Piercing_G_Kind" ColumnName="Piercing_G_Kind" />
+                <ScalarProperty Name="Piercing_G_Press" ColumnName="Piercing_G_Press" />
+                <ScalarProperty Name="Piercing_Pier_T" ColumnName="Piercing_Pier_T" />
+                <ScalarProperty Name="Piercing_Step_Sum" ColumnName="Piercing_Step_Sum" />
+                <ScalarProperty Name="Piercing_Step_T" ColumnName="Piercing_Step_T" />
+                <ScalarProperty Name="Piercing_I_Duty" ColumnName="Piercing_I_Duty" />
+                <ScalarProperty Name="Piercing_I_Freq" ColumnName="Piercing_I_Freq" />
+                <ScalarProperty Name="Piercing_Duty" ColumnName="Piercing_Duty" />
+                <ScalarProperty Name="Piercing_Freq" ColumnName="Piercing_Freq" />
+                <ScalarProperty Name="Piercing_Power" ColumnName="Piercing_Power" />
+                <ScalarProperty Name="CutterDiameter" ColumnName="CutterDiameter" />
+                <ScalarProperty Name="CutterType" ColumnName="CutterType" />
+                <ScalarProperty Name="FocalPosition" ColumnName="FocalPosition" />
+                <ScalarProperty Name="FocalDistance" ColumnName="FocalDistance" />
+                <ScalarProperty Name="MaterialThickness" ColumnName="MaterialThickness" />
+                <ScalarProperty Name="MaterialType" ColumnName="MaterialType" />
+                <ScalarProperty Name="MachiningType" ColumnName="MachiningType" />
+                <ScalarProperty Name="ENO" ColumnName="ENO" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MachiningLib_SlopeControl">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.MachiningLib_SlopeControl">
+              <MappingFragment StoreEntitySet="MachiningLib_SlopeControl">
+                <ScalarProperty Name="SlopeControl_Reserve_Info_3" ColumnName="SlopeControl_Reserve_Info_3" />
+                <ScalarProperty Name="SlopeControl_Reserve_Info_2" ColumnName="SlopeControl_Reserve_Info_2" />
+                <ScalarProperty Name="SlopeControl_Reserve_Info_1" ColumnName="SlopeControl_Reserve_Info_1" />
+                <ScalarProperty Name="SlopeControl_Reserve_10" ColumnName="SlopeControl_Reserve_10" />
+                <ScalarProperty Name="SlopeControl_Reserve_9" ColumnName="SlopeControl_Reserve_9" />
+                <ScalarProperty Name="SlopeControl_Reserve_8" ColumnName="SlopeControl_Reserve_8" />
+                <ScalarProperty Name="SlopeControl_Reserve_7" ColumnName="SlopeControl_Reserve_7" />
+                <ScalarProperty Name="SlopeControl_Reserve_6" ColumnName="SlopeControl_Reserve_6" />
+                <ScalarProperty Name="SlopeControl_Reserve_5" ColumnName="SlopeControl_Reserve_5" />
+                <ScalarProperty Name="SlopeControl_Reserve_4" ColumnName="SlopeControl_Reserve_4" />
+                <ScalarProperty Name="SlopeControl_Reserve_3" ColumnName="SlopeControl_Reserve_3" />
+                <ScalarProperty Name="SlopeControl_Reserve_2" ColumnName="SlopeControl_Reserve_2" />
+                <ScalarProperty Name="SlopeControl_Reserve_1" ColumnName="SlopeControl_Reserve_1" />
+                <ScalarProperty Name="SlopeControl_FeedR" ColumnName="SlopeControl_FeedR" />
+                <ScalarProperty Name="SlopeControl_FeedRDec" ColumnName="SlopeControl_FeedRDec" />
+                <ScalarProperty Name="SlopeControl_DutySpZr" ColumnName="SlopeControl_DutySpZr" />
+                <ScalarProperty Name="SlopeControl_DutyMin" ColumnName="SlopeControl_DutyMin" />
+                <ScalarProperty Name="SlopeControl_FreqSpZr" ColumnName="SlopeControl_FreqSpZr" />
+                <ScalarProperty Name="SlopeControl_FreqMin" ColumnName="SlopeControl_FreqMin" />
+                <ScalarProperty Name="SlopeControl_PwrSpZr" ColumnName="SlopeControl_PwrSpZr" />
+                <ScalarProperty Name="SlopeControl_PowerMin" ColumnName="SlopeControl_PowerMin" />
+                <ScalarProperty Name="CutterDiameter" ColumnName="CutterDiameter" />
+                <ScalarProperty Name="CutterType" ColumnName="CutterType" />
+                <ScalarProperty Name="FocalPosition" ColumnName="FocalPosition" />
+                <ScalarProperty Name="FocalDistance" ColumnName="FocalDistance" />
+                <ScalarProperty Name="MaterialThickness" ColumnName="MaterialThickness" />
+                <ScalarProperty Name="MaterialType" ColumnName="MaterialType" />
+                <ScalarProperty Name="MachiningType" ColumnName="MachiningType" />
+                <ScalarProperty Name="NO" ColumnName="NO" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ManualInfo">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.ManualInfo">
+              <MappingFragment StoreEntitySet="ManualInfo">
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RootMachiningLib_Cutting">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.RootMachiningLib_Cutting">
+              <MappingFragment StoreEntitySet="RootMachiningLib_Cutting">
+                <ScalarProperty Name="Cutting_Reserve_Info_3" ColumnName="Cutting_Reserve_Info_3" />
+                <ScalarProperty Name="Cutting_Reserve_Info_2" ColumnName="Cutting_Reserve_Info_2" />
+                <ScalarProperty Name="Cutting_Reverse_Info_1" ColumnName="Cutting_Reverse_Info_1" />
+                <ScalarProperty Name="Cutting_Dsp2_Dec" ColumnName="Cutting_Dsp2_Dec" />
+                <ScalarProperty Name="Cutting_Supple_Dec" ColumnName="Cutting_Supple_Dec" />
+                <ScalarProperty Name="Cutting_Feed_Dec" ColumnName="Cutting_Feed_Dec" />
+                <ScalarProperty Name="Cutting_Gap_Axis" ColumnName="Cutting_Gap_Axis" />
+                <ScalarProperty Name="Cutting_Displace_2" ColumnName="Cutting_Displace_2" />
+                <ScalarProperty Name="Cutting_Pwr_Ctrl" ColumnName="Cutting_Pwr_Ctrl" />
+                <ScalarProperty Name="Cutting_Appr_Slt" ColumnName="Cutting_Appr_Slt" />
+                <ScalarProperty Name="Cutting_Edge_Slt" ColumnName="Cutting_Edge_Slt" />
+                <ScalarProperty Name="Cutting_Supple" ColumnName="Cutting_Supple" />
+                <ScalarProperty Name="Cutting_Displace" ColumnName="Cutting_Displace" />
+                <ScalarProperty Name="Cutting_G_Ready_T" ColumnName="Cutting_G_Ready_T" />
+                <ScalarProperty Name="Cutting_G_Kind" ColumnName="Cutting_G_Kind" />
+                <ScalarProperty Name="Cutting_G_Press" ColumnName="Cutting_G_Press" />
+                <ScalarProperty Name="Cutting_Duty" ColumnName="Cutting_Duty" />
+                <ScalarProperty Name="Cutting_Freq" ColumnName="Cutting_Freq" />
+                <ScalarProperty Name="Cutting_Power" ColumnName="Cutting_Power" />
+                <ScalarProperty Name="Cutting_Feed" ColumnName="Cutting_Feed" />
+                <ScalarProperty Name="CutterDiameter" ColumnName="CutterDiameter" />
+                <ScalarProperty Name="CutterType" ColumnName="CutterType" />
+                <ScalarProperty Name="FocalPosition" ColumnName="FocalPosition" />
+                <ScalarProperty Name="FocalDistance" ColumnName="FocalDistance" />
+                <ScalarProperty Name="MaterialThickness" ColumnName="MaterialThickness" />
+                <ScalarProperty Name="MaterialType" ColumnName="MaterialType" />
+                <ScalarProperty Name="MachiningType" ColumnName="MachiningType" />
+                <ScalarProperty Name="ENO" ColumnName="ENO" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RootMachiningLib_EdgeCutting">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.RootMachiningLib_EdgeCutting">
+              <MappingFragment StoreEntitySet="RootMachiningLib_EdgeCutting">
+                <ScalarProperty Name="EdgeCutting_Reserve_Info_3" ColumnName="EdgeCutting_Reserve_Info_3" />
+                <ScalarProperty Name="EdgeCutting_Reserve_Info_2" ColumnName="EdgeCutting_Reserve_Info_2" />
+                <ScalarProperty Name="EdgeCutting_Reserve_Info_1" ColumnName="EdgeCutting_Reserve_Info_1" />
+                <ScalarProperty Name="EdgeCutting_Reserve_4" ColumnName="EdgeCutting_Reserve_4" />
+                <ScalarProperty Name="EdgeCutting_Reserve_3" ColumnName="EdgeCutting_Reserve_3" />
+                <ScalarProperty Name="EdgeCutting_Reserve_2" ColumnName="EdgeCutting_Reserve_2" />
+                <ScalarProperty Name="EdgeCutting_Reserve_1" ColumnName="EdgeCutting_Reserve_1" />
+                <ScalarProperty Name="EdgeCutting_Gap" ColumnName="EdgeCutting_Gap" />
+                <ScalarProperty Name="EdgeCutting_R_Duty" ColumnName="EdgeCutting_R_Duty" />
+                <ScalarProperty Name="EdgeCutting_R_Freq" ColumnName="EdgeCutting_R_Freq" />
+                <ScalarProperty Name="EdgeCutting_R_Feed" ColumnName="EdgeCutting_R_Feed" />
+                <ScalarProperty Name="EdgeCutting_R_Len" ColumnName="EdgeCutting_R_Len" />
+                <ScalarProperty Name="EdgeCutting_G_Kind" ColumnName="EdgeCutting_G_Kind" />
+                <ScalarProperty Name="EdgeCutting_G_Press" ColumnName="EdgeCutting_G_Press" />
+                <ScalarProperty Name="EdgeCutting_Pier_T" ColumnName="EdgeCutting_Pier_T" />
+                <ScalarProperty Name="EdgeCutting_Duty" ColumnName="EdgeCutting_Duty" />
+                <ScalarProperty Name="EdgeCutting_Freq" ColumnName="EdgeCutting_Freq" />
+                <ScalarProperty Name="EdgeCutting_Power" ColumnName="EdgeCutting_Power" />
+                <ScalarProperty Name="EdgeCutting_Angle" ColumnName="EdgeCutting_Angle" />
+                <ScalarProperty Name="CutterDiameter" ColumnName="CutterDiameter" />
+                <ScalarProperty Name="CutterType" ColumnName="CutterType" />
+                <ScalarProperty Name="FocalPosition" ColumnName="FocalPosition" />
+                <ScalarProperty Name="FocalDistance" ColumnName="FocalDistance" />
+                <ScalarProperty Name="MaterialThickness" ColumnName="MaterialThickness" />
+                <ScalarProperty Name="MaterialType" ColumnName="MaterialType" />
+                <ScalarProperty Name="MachiningType" ColumnName="MachiningType" />
+                <ScalarProperty Name="NO" ColumnName="NO" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RootMachiningLib_Material">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.RootMachiningLib_Material">
+              <MappingFragment StoreEntitySet="RootMachiningLib_Material">
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RootMachiningLib_Piercing">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.RootMachiningLib_Piercing">
+              <MappingFragment StoreEntitySet="RootMachiningLib_Piercing">
+                <ScalarProperty Name="Piercing_Reserve_Info_3" ColumnName="Piercing_Reserve_Info_3" />
+                <ScalarProperty Name="Piercing_Reserve_Info_2" ColumnName="Piercing_Reserve_Info_2" />
+                <ScalarProperty Name="Piercing_Reserve_Info_1" ColumnName="Piercing_Reserve_Info_1" />
+                <ScalarProperty Name="Piercing_Def_Pos2_Dec" ColumnName="Piercing_Def_Pos2_Dec" />
+                <ScalarProperty Name="Piercing_Gap_Axis" ColumnName="Piercing_Gap_Axis" />
+                <ScalarProperty Name="Piercing_Def_Pos2" ColumnName="Piercing_Def_Pos2" />
+                <ScalarProperty Name="Piercing_Def_Pos" ColumnName="Piercing_Def_Pos" />
+                <ScalarProperty Name="Piercing_G_Time" ColumnName="Piercing_G_Time" />
+                <ScalarProperty Name="Piercing_G_Kind" ColumnName="Piercing_G_Kind" />
+                <ScalarProperty Name="Piercing_G_Press" ColumnName="Piercing_G_Press" />
+                <ScalarProperty Name="Piercing_Pier_T" ColumnName="Piercing_Pier_T" />
+                <ScalarProperty Name="Piercing_Step_Sum" ColumnName="Piercing_Step_Sum" />
+                <ScalarProperty Name="Piercing_Step_T" ColumnName="Piercing_Step_T" />
+                <ScalarProperty Name="Piercing_I_Duty" ColumnName="Piercing_I_Duty" />
+                <ScalarProperty Name="Piercing_I_Freq" ColumnName="Piercing_I_Freq" />
+                <ScalarProperty Name="Piercing_Duty" ColumnName="Piercing_Duty" />
+                <ScalarProperty Name="Piercing_Freq" ColumnName="Piercing_Freq" />
+                <ScalarProperty Name="Piercing_Power" ColumnName="Piercing_Power" />
+                <ScalarProperty Name="CutterDiameter" ColumnName="CutterDiameter" />
+                <ScalarProperty Name="CutterType" ColumnName="CutterType" />
+                <ScalarProperty Name="FocalPosition" ColumnName="FocalPosition" />
+                <ScalarProperty Name="FocalDistance" ColumnName="FocalDistance" />
+                <ScalarProperty Name="MaterialThickness" ColumnName="MaterialThickness" />
+                <ScalarProperty Name="MaterialType" ColumnName="MaterialType" />
+                <ScalarProperty Name="MachiningType" ColumnName="MachiningType" />
+                <ScalarProperty Name="ENO" ColumnName="ENO" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RootMachiningLib_SlopeControl">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.RootMachiningLib_SlopeControl">
+              <MappingFragment StoreEntitySet="RootMachiningLib_SlopeControl">
+                <ScalarProperty Name="SlopeControl_Reserve_Info_3" ColumnName="SlopeControl_Reserve_Info_3" />
+                <ScalarProperty Name="SlopeControl_Reserve_Info_2" ColumnName="SlopeControl_Reserve_Info_2" />
+                <ScalarProperty Name="SlopeControl_Reserve_Info_1" ColumnName="SlopeControl_Reserve_Info_1" />
+                <ScalarProperty Name="SlopeControl_Reserve_10" ColumnName="SlopeControl_Reserve_10" />
+                <ScalarProperty Name="SlopeControl_Reserve_9" ColumnName="SlopeControl_Reserve_9" />
+                <ScalarProperty Name="SlopeControl_Reserve_8" ColumnName="SlopeControl_Reserve_8" />
+                <ScalarProperty Name="SlopeControl_Reserve_7" ColumnName="SlopeControl_Reserve_7" />
+                <ScalarProperty Name="SlopeControl_Reserve_6" ColumnName="SlopeControl_Reserve_6" />
+                <ScalarProperty Name="SlopeControl_Reserve_5" ColumnName="SlopeControl_Reserve_5" />
+                <ScalarProperty Name="SlopeControl_Reserve_4" ColumnName="SlopeControl_Reserve_4" />
+                <ScalarProperty Name="SlopeControl_Reserve_3" ColumnName="SlopeControl_Reserve_3" />
+                <ScalarProperty Name="SlopeControl_Reserve_2" ColumnName="SlopeControl_Reserve_2" />
+                <ScalarProperty Name="SlopeControl_Reserve_1" ColumnName="SlopeControl_Reserve_1" />
+                <ScalarProperty Name="SlopeControl_FeedR" ColumnName="SlopeControl_FeedR" />
+                <ScalarProperty Name="SlopeControl_FeedRDec" ColumnName="SlopeControl_FeedRDec" />
+                <ScalarProperty Name="SlopeControl_DutySpZr" ColumnName="SlopeControl_DutySpZr" />
+                <ScalarProperty Name="SlopeControl_DutyMin" ColumnName="SlopeControl_DutyMin" />
+                <ScalarProperty Name="SlopeControl_FreqSpZr" ColumnName="SlopeControl_FreqSpZr" />
+                <ScalarProperty Name="SlopeControl_FreqMin" ColumnName="SlopeControl_FreqMin" />
+                <ScalarProperty Name="SlopeControl_PwrSpZr" ColumnName="SlopeControl_PwrSpZr" />
+                <ScalarProperty Name="SlopeControl_PowerMin" ColumnName="SlopeControl_PowerMin" />
+                <ScalarProperty Name="CutterDiameter" ColumnName="CutterDiameter" />
+                <ScalarProperty Name="CutterType" ColumnName="CutterType" />
+                <ScalarProperty Name="FocalPosition" ColumnName="FocalPosition" />
+                <ScalarProperty Name="FocalDistance" ColumnName="FocalDistance" />
+                <ScalarProperty Name="MaterialThickness" ColumnName="MaterialThickness" />
+                <ScalarProperty Name="MaterialType" ColumnName="MaterialType" />
+                <ScalarProperty Name="MachiningType" ColumnName="MachiningType" />
+                <ScalarProperty Name="NO" ColumnName="NO" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SparePart">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.SparePart">
+              <MappingFragment StoreEntitySet="SparePart">
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRole">
+            <EntityTypeMapping TypeName="LaserEngineDBModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="IsAuth" ColumnName="IsAuth" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

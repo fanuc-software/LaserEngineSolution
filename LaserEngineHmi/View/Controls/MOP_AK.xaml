@@ -1,0 +1,359 @@
+﻿<UserControl x:Class="LaserEngineHmi.View.Controls.MOP_AK"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LaserEngineHmi.View.Controls" 
+             xmlns:conv="clr-namespace:LaserEngineHmi.View.Converters" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d" 
+             d:DesignHeight="528" d:DesignWidth="636">
+    <!--PRIMA SL 软式键盘-->
+    <!--Height="392" Width="554"-->
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadPageCommand}"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnLoadPageCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <UserControl.Resources>
+        <conv:MopBackgroundColorConverter x:Key="_mbcc"/>
+        <conv:MopBoardBushConverter x:Key="_mbbc"/>
+        <conv:BoolToColorConverter x:Key="_b2c"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="69"/>
+            <RowDefinition Height="69"/>
+            <RowDefinition Height="69"/>
+            <RowDefinition Height="69"/>
+            <RowDefinition Height="69"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" Margin="2,0,2,2" Foreground="White" Style="{StaticResource MopButton}" Content="自动"
+                Background="{Binding Mop_Key_Status.Mop_Auto_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Auto_Status,Converter={StaticResource _mbbc}}"
+                >
+        </Button>
+        <Button Grid.Row="0" Grid.Column="1" Margin="2,0,2,2" Foreground="White" Style="{StaticResource MopButton}" Content="手动"
+                Background="{Binding Mop_Key_Status.Mop_Edit_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Edit_Status,Converter={StaticResource _mbbc}}"
+                />
+        <Button Grid.Row="0" Grid.Column="2" Margin="2,0,2,2" Foreground="White" Style="{StaticResource MopButton}" Content="回零"
+                  Background="{Binding Mop_Key_Status.Mop_Mdi_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Mdi_Status,Converter={StaticResource _mbbc}}"
+                />
+        <Button Grid.Row="0" Grid.Column="3" Margin="2,0,2,2" Foreground="White" Style="{StaticResource MopButton}" Content="MDI"
+                  Background="{Binding Mop_Key_Status.Mop_Rmt_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Rmt_Status,Converter={StaticResource _mbbc}}"
+                />
+        <Button Grid.Row="0" Grid.Column="6" Margin="2,0,2,2" Foreground="White" Style="{StaticResource MopButton}" Content="位置"
+                Background="#FF484848" BorderBrush="#FF484848"
+                Command="{Binding CNC_POSITION_CMD}" />
+        <Button Grid.Row="0" Grid.Column="7" Margin="2,0,2,2" Foreground="White" Style="{StaticResource MopButton}" Content="设定"
+                Background="#FF484848" BorderBrush="#FF484848"
+                Command="{Binding CNC_OFFSET_CMD}"/>
+        <Button Grid.Row="0" Grid.Column="4" Margin="2,0,2,2" Foreground="White" Style="{StaticResource MopButton}"
+                 Background="#FF484848" BorderBrush="#FF484848"/>
+        <Button Grid.Row="0" Grid.Column="5" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="RAM" Tag="设置"
+                Background="#FF484848" BorderBrush="#FF484848"
+                Command="{Binding CNC_RAM_CMD}"/>
+        <Button Grid.Row="1" Grid.Column="0" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="跳过"
+                Background="{Binding Mop_Key_Status.Mop_Step_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Step_Status,Converter={StaticResource _mbbc}}"
+                />
+        <Button Grid.Row="1" Grid.Column="1" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="单步"
+                Background="{Binding Mop_Key_Status.Mop_Skip_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Skip_Status,Converter={StaticResource _mbbc}}"
+                />
+        <Button Grid.Row="1" Grid.Column="2" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="冲激" Tag="锁定"
+                Background="{Binding Mop_Key_Status.Mop_Opt_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Opt_Status,Converter={StaticResource _mbbc}}"
+                />
+        <Button Grid.Row="1" Grid.Column="3" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="RAM" Tag="使能"
+                Background="{Binding Mop_Key_Status.Mop_Dry_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_Dry_Status,Converter={StaticResource _mbbc}}"
+                />
+        <Button Grid.Row="1" Grid.Column="6" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="程序"
+                Background="#FF484848" BorderBrush="#FF484848"
+                Command="{Binding CNC_PROGRAM_CMD}"/>
+        <Button Grid.Row="1" Grid.Column="7" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="图形" Tag=""
+                Background="#FF484848" BorderBrush="#FF484848"
+                Command="{Binding CNC_GRAPH_CMD}"/>
+        <Button Grid.Row="1" Grid.Column="4" Margin="2" Foreground="White" Style="{StaticResource MopButton}"
+                 Background="#FF484848" BorderBrush="#FF484848"/>
+        <Button Grid.Row="1" Grid.Column="5" Margin="2" Foreground="White" Style="{StaticResource MopButton}"
+                Background="#FF484848" BorderBrush="#FF484848"/>
+        <Button Grid.Row="2" Grid.Column="0" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="激光" Tag="振荡器"
+                Background="{Binding Mop_Key_Status.Mop_PiercingDelay_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_PiercingDelay_Status,Converter={StaticResource _mbbc}}"
+                />
+        <Button Grid.Row="2" Grid.Column="1" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="高压" Tag="启动"
+                Background="{Binding Mop_Key_Status.Mop_PiercingShorten_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_PiercingShorten_Status,Converter={StaticResource _mbbc}}"
+                />
+        <Button Grid.Row="2" Grid.Column="2" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="水冷机"
+                Background="{Binding Mop_Key_Status.Mop_DustClear_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_DustClear_Status,Converter={StaticResource _mbbc}}"
+                />
+        <Button Grid.Row="2" Grid.Column="3" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="系统" Tag="润滑"
+                Background="{Binding Mop_Key_Status.Mop_LampOn_Status,Converter={StaticResource _mbcc}}" BorderBrush="{Binding Mop_Key_Status.Mop_LampOn_Status,Converter={StaticResource _mbbc}}"
+                />
+        <Button Grid.Row="2" Grid.Column="6" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="系统" 
+                Background="#FF484848" BorderBrush="#FF484848"
+                Command="{Binding CNC_SYSTEM_CMD}"/>
+        <Button Grid.Row="2" Grid.Column="7" Margin="2" Foreground="White" Style="{StaticResource MopButton}" Content="信息"
+                Background="#FF484848" BorderBrush="#FF484848"
+                Command="{Binding CNC_MESSAGE_CMD}"/>
+        <Button Grid.Row="2" Grid.Column="4" Margin="2" Foreground="White" Style="{StaticResource MopButton}"
+                Background="#FF484848" BorderBrush="#FF484848"/>
+        <Button Grid.Row="2" Grid.Column="5" Margin="2" Foreground="White" Style="{StaticResource MopButton}"
+                 Background="#FF484848" BorderBrush="#FF484848"/>
+        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="8" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Focusable="False" Text="空气进气压力" Foreground="White" FontSize="12"/>
+                </StackPanel>
+                <ProgressBar Focusable="False" Value="100"  Height="3"  Style="{DynamicResource progress-bar}"></ProgressBar>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="150" VerticalAlignment="Center" Margin="0,3,0,0">
+                    <TextBlock  Focusable="False" Text="{Binding Path=Mop_Key_Status.AirPressure,StringFormat={}{0} MPa}" Foreground="White" FontSize="24" Margin="0,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Vertical" Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Focusable="False" Text="氮气进气压力" Foreground="White" FontSize="12"/>
+                </StackPanel>
+                <ProgressBar Focusable="False" Value="100"  Height="3"  Style="{DynamicResource progress-bar}"></ProgressBar>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="150" VerticalAlignment="Center" Margin="0,3,0,0">
+                    <TextBlock  Focusable="False" Text="{Binding Path=Mop_Key_Status.NAirPressure,StringFormat={}{0} MPa}" Foreground="White" FontSize="24" Margin="0,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Orientation="Vertical" Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Focusable="False" Text="氧气进气压力" Foreground="White" FontSize="12"/>
+                </StackPanel>
+                <ProgressBar Focusable="False" Value="100"  Height="3"  Style="{DynamicResource progress-bar}"></ProgressBar>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="150" VerticalAlignment="Center" Margin="0,3,0,0">
+                    <TextBlock  Focusable="False" Text="{Binding Path=Mop_Key_Status.OAirPressure,StringFormat={}{0} MPa}" Foreground="White" FontSize="24" Margin="0,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="3" Orientation="Vertical" Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Focusable="False" Text="辅助气体种类" Foreground="White" FontSize="12"/>
+                </StackPanel>
+                <ProgressBar Focusable="False" Value="100"  Height="3"  Style="{DynamicResource progress-bar}"></ProgressBar>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="150" VerticalAlignment="Center" Margin="0,3,0,0">
+                    <TextBlock  Focusable="False" Text="{Binding Path=Mop_Key_Status.StrGAS}" Foreground="White" FontSize="24" Margin="0,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="8" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Focusable="False" Text="当前焦点位置" Foreground="White" FontSize="12"/>
+                </StackPanel>
+                <ProgressBar Focusable="False" Value="100"  Height="3"  Style="{DynamicResource progress-bar}"></ProgressBar>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="150" VerticalAlignment="Center" Margin="0,3,0,0">
+                    <TextBlock  Focusable="False" Text="{Binding Path=Mop_Key_Status.FocusPosition,StringFormat={}{0} mm}" Foreground="White" FontSize="24" Margin="0,0,0,0"/>
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="1"  Orientation="Vertical" Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Focusable="False" Text="设定切割压力" Foreground="White" FontSize="12"/>
+                </StackPanel>
+                <ProgressBar Focusable="False" Value="100"  Height="3"  Style="{DynamicResource progress-bar}"></ProgressBar>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="150" VerticalAlignment="Center" Margin="0,3,0,0">
+                    <TextBlock  Focusable="False" Text="{Binding Path=Mop_Key_Status.CutPressureSet,StringFormat={}{0} MPa}" Foreground="White" FontSize="24" Margin="0,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Orientation="Vertical" Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Focusable="False"  Text="实际切割压力" Foreground="White" FontSize="12"/>
+
+                </StackPanel>
+                <ProgressBar Focusable="False" Value="100"  Height="3"  Style="{DynamicResource progress-bar}"></ProgressBar>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="150" VerticalAlignment="Center" Margin="0,3,0,0">
+                    <TextBlock Focusable="False" Text="{Binding Path=Mop_Key_Status.CutPressureActual,StringFormat={}{0} MPa}" Foreground="White" FontSize="24" Margin="0,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <!--PRIMA SL -->
+        <Border BorderBrush="Transparent" BorderThickness="2" CornerRadius="2" Panel.ZIndex="40"
+                Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4" Margin="5,5,5,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="XplusBtn" VerticalAlignment="Bottom" Width="60" Height="60" Grid.Row="0" Grid.Column="2" 
+                        HorizontalAlignment="Center" Style="{StaticResource AxisArrorButton}" Background="{Binding Mop_Key_Status.YPLUS,Converter={StaticResource _b2c}}"/>
+                <Button x:Name="YplusBtn" VerticalAlignment="Center" Width="60" Height="60" Grid.Row="1" Grid.Column="1"
+                        HorizontalAlignment="Right" Style="{StaticResource AxisArrorButton}" Background="{Binding Mop_Key_Status.XMINUS,Converter={StaticResource _b2c}}"
+                        RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <RotateTransform  Angle="-90"></RotateTransform>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="YminusBtn" VerticalAlignment="Center" Width="60" Height="60" Grid.Row="1" Grid.Column="3"
+                        HorizontalAlignment="Left" Style="{StaticResource AxisArrorButton}" Background="{Binding Mop_Key_Status.XPLUS,Converter={StaticResource _b2c}}"
+                        RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <RotateTransform  Angle="90"></RotateTransform>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="XminusBtn" VerticalAlignment="Top" Width="60" Height="60" Grid.Row="2" Grid.Column="2" 
+                        HorizontalAlignment="Center" Style="{StaticResource AxisArrorButton}" Background="{Binding Mop_Key_Status.YMINUS,Converter={StaticResource _b2c}}"
+                        RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <RotateTransform  Angle="180"></RotateTransform>
+                    </Button.RenderTransform>
+                </Button>
+            </Grid>
+        </Border>
+
+        <Border BorderBrush="Transparent" BorderThickness="0" CornerRadius="2" Panel.ZIndex="30"
+                Background="#FF484848"
+                Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4" Margin="5,5,5,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="+Y" Grid.Row="0" Grid.Column="2" FontSize="20" Foreground="White"
+                        HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,0,20"/>
+                <TextBlock Text="-X"  Grid.Row="1" Grid.Column="1"
+                        HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="White" Margin="5,0,0,0">
+                </TextBlock>
+                <TextBlock Text="+X" VerticalAlignment="Bottom"  Grid.Row="1" Grid.Column="3"
+                        HorizontalAlignment="Right" FontSize="20" Foreground="White" Margin="0,0,10,0">
+                </TextBlock>
+                <TextBlock Text="-Y" VerticalAlignment="Bottom"  Grid.Row="2" Grid.Column="2"
+                        HorizontalAlignment="Left" FontSize="20" Foreground="White" Margin="0,0,0,5">
+                </TextBlock>
+            </Grid>
+        </Border>
+
+        <!--PRIMA SL -->
+        <Border BorderBrush="Transparent" BorderThickness="2" CornerRadius="2" Panel.ZIndex="40"
+                Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="2" Margin="5,5,5,0">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0*"/>
+                    <RowDefinition Height="75*"/>
+                    <RowDefinition Height="75*"/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="ZplusBtn" VerticalAlignment="Center" Width="60" Height="60" Grid.Row="1"
+                        HorizontalAlignment="Center" Style="{StaticResource AxisArrorButton}" Background="{Binding Mop_Key_Status.ZPLUS,Converter={StaticResource _b2c}}"/> 
+                <Button x:Name="ZminusBtn" VerticalAlignment="Center" Width="60" Height="60" 
+                        HorizontalAlignment="Center" Style="{StaticResource AxisArrorButton}" Background="{Binding Mop_Key_Status.ZMINUS,Converter={StaticResource _b2c}}"
+                    RenderTransformOrigin="0.5,0.5" Grid.Row="2">
+                    <Button.RenderTransform>
+                        <RotateTransform  Angle="180"></RotateTransform>
+                    </Button.RenderTransform>
+                </Button>
+            </Grid>
+        </Border>
+
+        <Border BorderBrush="Transparent" BorderThickness="0" CornerRadius="2" Panel.ZIndex="20"
+                Background="#FF484848"
+                Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="2" Margin="5,5,5,0">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0*"/>
+                    <RowDefinition Height="75*"/>
+                    <RowDefinition Height="75*"/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="+Z" VerticalAlignment="Center" Grid.Row="1"
+                        HorizontalAlignment="Right" Margin="0,0,10,0"
+                        Foreground="White" FontSize="20"/>
+                <TextBlock Text="-Z" VerticalAlignment="Center" Grid.Row="2"
+                        HorizontalAlignment="Right" Margin="0,0,10,0"
+                        Foreground="White" FontSize="20"/>
+            </Grid>
+        </Border>
+
+        <!--PRIMA SL -->
+        <Border BorderBrush="Transparent" BorderThickness="2" CornerRadius="2" Panel.ZIndex="40"
+                Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="2" Margin="5,5,5,0">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0*"/>
+                    <RowDefinition Height="75*"/>
+                    <RowDefinition Height="75*"/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="plusBtn" VerticalAlignment="Center" Width="60" Height="60" Grid.Row="1"
+                        HorizontalAlignment="Center" Style="{StaticResource AxisArrorButton}" Background="{Binding Mop_Key_Status.BMINUS,Converter={StaticResource _b2c}}"/>
+                <Button x:Name="BminusBtn" VerticalAlignment="Center" Width="60" Height="60" 
+                        HorizontalAlignment="Center" Style="{StaticResource AxisArrorButton}" Background="{Binding Mop_Key_Status.BPLUS,Converter={StaticResource _b2c}}"
+                    RenderTransformOrigin="0.5,0.5" Grid.Row="2">
+                    <Button.RenderTransform>
+                        <RotateTransform  Angle="180"></RotateTransform>
+                    </Button.RenderTransform>
+                </Button>
+            </Grid>
+        </Border>
+
+        <Border BorderBrush="Transparent" BorderThickness="0" CornerRadius="2" Panel.ZIndex="20"
+                Background="#FF484848"
+                Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="2" Margin="5,5,5,0">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0*"/>
+                    <RowDefinition Height="75*"/>
+                    <RowDefinition Height="75*"/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="-B" VerticalAlignment="Center" Grid.Row="1"
+                        HorizontalAlignment="Right" Margin="0,0,10,0"
+                        Foreground="White" FontSize="20"/>
+                <TextBlock Text="+B" VerticalAlignment="Center" Grid.Row="2"
+                        HorizontalAlignment="Right" Margin="0,0,10,0"
+                        Foreground="White" FontSize="20"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</UserControl>

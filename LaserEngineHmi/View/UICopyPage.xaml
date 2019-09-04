@@ -1,0 +1,51 @@
+﻿<Page x:Class="LaserEngineHmi.View.UICopyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LaserEngineHmi.View"
+      mc:Ignorable="d" 
+      Width="700" Height="725"
+      Title="UICopyPage">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"  Background="#FF323232" Grid.ColumnSpan="2">
+            <TextBlock Text="{DynamicResource IO_UICOPY_TITLE}" Margin="10"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="White"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="45*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock  Grid.Row="1" Grid.Column="0" 
+                Text="{DynamicResource IO_UICOPY_PATH}" Margin="0,0,10,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBox 
+                     HorizontalAlignment="Left" Margin="10,5,0,5" Width="200" Background="Transparent"/>
+            </StackPanel>
+            <TextBlock  Grid.Row="2" Grid.Column="0" 
+                Text="{DynamicResource IO_UICOPY_KEY}" Margin="0,0,10,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <ComboBox  HorizontalAlignment="Left" Margin="10,5,0,5" Width="200" Background="Transparent">
+                    <ComboBoxItem>苹果</ComboBoxItem>
+                    <ComboBoxItem>橡胶</ComboBoxItem>
+                    <ComboBoxItem>桔子</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,208 @@
+﻿<Page x:Class="LaserEngineHmi.View.SimulationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:myControl="clr-namespace:LaserEngineHmi.View.Controls"
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      mc:Ignorable="d" 
+      Height="528" Width="704"
+	Title="SimulationPage">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadPageCommand}"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnLoadPageCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Background="#FF323232" Grid.ColumnSpan="5">
+                    <TextBlock Text="{DynamicResource SIMULATION_STATUS_TITLE}" Margin="10"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_PC}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_PC}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_PC}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_PC}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_FR}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_FR}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_DU}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_DU}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_PA}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_PA}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_E0XX}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_E0XX}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_E10X}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_E10X}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_F}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_F}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_LASEROV_PC}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_LASEROV_PC}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_LASEROV_FR}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_LASEROV_FR}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_LASEROV_DU}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_LASEROV_DU}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_NANOPC}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_NANOPC}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_POWERCONTROL}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_POWERCONTROL}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource SIMULATION_STATUS_EDGECUTTING}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SimulationInfo.SIMULATION_STATUS_EDGECUTTING}" Margin="10,0,0,0"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+    </Grid>
+</Page>

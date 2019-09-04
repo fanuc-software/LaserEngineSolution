@@ -1,0 +1,55 @@
+﻿<Page x:Class="LaserEngineHmi.View.MachiningLibPiercingDataGrid"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LaserEngineHmi.View"
+      mc:Ignorable="d" 
+      Height="428" Width="704" 
+      Title="MachiningLibPiercingDataGrid" >
+    <Page.Resources>
+        <Style x:Key="FontAwesome">
+            <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/LaserEngineHmi;component/View/Styles/FontAwesome/#FontAwesome" />
+        </Style>
+
+    </Page.Resources>
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Background="Transparent" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Margin="5,0,30,0" Content="&#xf044;" Style="{StaticResource LibSearchButton}"
+                    Command="{Binding _EditCmd}"/>
+        </StackPanel>
+        <DataGrid Margin="0" Grid.Column="0" AutoGenerateColumns="False" IsReadOnly="True"
+                      ItemsSource="{Binding _PiercingDatas}" FontSize="14" Grid.Row="1" SelectedItem="{Binding _SelPiercingData}" Background="#FF323232">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="E编号"             ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding ENO}"/>
+                <DataGridTextColumn Header="加工类型"          ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding AKMachiningType}"/>
+                <DataGridTextColumn Header="材料类型"          ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding MaterialType}"/>
+                <DataGridTextColumn Header="材料厚度"          ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding MaterialThickness}"/>
+                <DataGridTextColumn Header="焦点位置"          ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding FocalPosition}"/>
+                <DataGridTextColumn Header="割嘴类型"        ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding CutterType}" Visibility="Collapsed"/>
+                <DataGridTextColumn Header="割嘴内径"        ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding CutterDiameter}"/>
+                <DataGridTextColumn Header="功率"              ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_Power}"/>
+                <DataGridTextColumn Header="初始值频率"        ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_Freq}"/>
+                <DataGridTextColumn Header="初始值占空比"      ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_Duty}"/>
+                <DataGridTextColumn Header="增量频率"          ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_I_Freq}"/>
+                <DataGridTextColumn Header="增量占空比"        ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_I_Duty}"/>
+                <DataGridTextColumn Header="步 时间"           ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_Step_T}"/>
+                <DataGridTextColumn Header="步 数"             ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_Step_Sum}"/>
+                <DataGridTextColumn Header="穿孔时间"          ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_Pier_T}"/>
+                <DataGridTextColumn Header="辅助气体压力"      ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_G_Press}"/>
+                <DataGridTextColumn Header="辅助气体种类"      ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding StrPiercing_G_Kind}"/>
+                <DataGridTextColumn Header="辅助气体时间"      ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_G_Time}"/>
+                <DataGridTextColumn Header="基准偏移量"        ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_Def_Pos}"/>
+                <!--<DataGridTextColumn Header="其他信息1"         ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_Reverse_Info_1}"/>
+                <DataGridTextColumn Header="其他信息2"         ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_Reverse_Info_2}"/>
+                <DataGridTextColumn Header="其他信息3"         ElementStyle="{StaticResource DataGridTextCenter}" Binding="{Binding Piercing_Reverse_Info_3}"/>-->
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

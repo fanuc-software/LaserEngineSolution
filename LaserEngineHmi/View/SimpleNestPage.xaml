@@ -1,0 +1,148 @@
+﻿<Page x:Class="LaserEngineHmi.View.SimpleNestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:myControl="clr-namespace:LaserEngineHmi.View.Controls"
+      xmlns:local="clr-namespace:LaserEngineHmi.View"
+      mc:Ignorable="d" 
+      Width="700" Height="725"
+      Title="AutoCutterCleanPage">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"  Background="#FF323232" Grid.ColumnSpan="2">
+            <TextBlock Text="{DynamicResource MACHINE_MENU_SIMPLENEST_CONTENT}" Margin="10"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="White"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="300"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Grid.Row="0" BorderBrush="#FF323232" BorderThickness="1" Background="Transparent" Margin="5">
+                    <Image Margin="10" Source="/LaserEngineHmi;component/Resources/images/sn_try.png"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Grid.Row="0" BorderBrush="#FF323232" BorderThickness="1" Background="Transparent" Margin="5">
+                    <Image Margin="10" Source="/LaserEngineHmi;component/Resources/images/sn_rm.png"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="2" Grid.Row="0" BorderBrush="#FF323232" BorderThickness="1" Background="Transparent" Margin="5">
+                    <Image Margin="10" Source="/LaserEngineHmi;component/Resources/images/sn_batch.png"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <RadioButton Style="{StaticResource radio has-success}" Grid.Row="1" Grid.Column="0" 
+                             HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="0"
+                        Content="{DynamicResource MACHINE_MENU_SIMPLENEST_TRY}"/>
+                <RadioButton Style="{StaticResource radio has-success}" Grid.Row="1" Grid.Column="1" 
+                             HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="0"
+                        Content="{DynamicResource MACHINE_MENU_SIMPLENEST_REMAIN}"/>
+                <RadioButton Style="{StaticResource radio has-success}" Grid.Row="1" Grid.Column="2" 
+                             HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="0"
+                        Content="{DynamicResource MACHINE_MENU_SIMPLENEST_BATCH}"/>
+            </Grid>
+
+            <Border Grid.Row="1" BorderBrush="#FF323232" BorderThickness="1" Background="Transparent" Margin="5">
+                <Image Margin="10" Source="/LaserEngineHmi;component/Resources/images/sn_order.png"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+
+            <Button Grid.Row="2" Width="200" Height="60"   VerticalAlignment="Center" Content="{DynamicResource MACHINE_MENU_SIMPLENEST_START}" 
+                        HorizontalAlignment="Center" Style="{StaticResource MachineMainExcButton}"
+                    Command="{Binding StartCommand}" />
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="2" Margin="15,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <TextBlock Text="{DynamicResource MACHINE_MENU_SIMPLENEST_ROW}" Margin="10,0,0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            </StackPanel>
+            <TextBox Grid.Row="2" HorizontalAlignment="Left" Margin="10,5,0,5" Width="200" Background="Transparent"
+                     Text="{Binding ROW}" Foreground="Yellow"
+                     myControl:KeyBoard.KeyBoard="True"/>
+
+            <StackPanel Grid.Row="3"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <TextBlock Text="{DynamicResource MACHINE_MENU_SIMPLENEST_COLOM}" Margin="10,0,0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            </StackPanel>
+            <TextBox Grid.Row="4" HorizontalAlignment="Left" Margin="10,5,0,5" Width="200" Background="Transparent"
+                     Text="{Binding COLOM}" Foreground="Yellow" myControl:KeyBoard.KeyBoard="True"/>
+
+            <StackPanel Grid.Row="5"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <TextBlock Text="{DynamicResource MACHINE_MENU_SIMPLENEST_XSIZE}" Margin="10,0,0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            </StackPanel>
+            <TextBox Grid.Row="6" HorizontalAlignment="Left" Margin="10,5,0,5" Width="200" Background="Transparent"
+                     Text="{Binding XSIZE}" Foreground="Yellow" myControl:KeyBoard.KeyBoard="True"/>
+
+            <StackPanel Grid.Row="7"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <TextBlock Text="{DynamicResource MACHINE_MENU_SIMPLENEST_YSIZE}" Margin="10,0,0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            </StackPanel>
+            <TextBox Grid.Row="8" HorizontalAlignment="Left" Margin="10,5,0,5" Width="200" Background="Transparent"
+                     Text="{Binding YSIZE}" Foreground="Yellow" myControl:KeyBoard.KeyBoard="True"/>
+
+            <StackPanel Grid.Row="9"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <TextBlock Text="{DynamicResource MACHINE_MENU_SIMPLENEST_G75G76}" Margin="10,0,0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            </StackPanel>
+            <TextBox Grid.Row="10" HorizontalAlignment="Left" Margin="10,5,0,5" Width="200" Background="Transparent"
+                     Text="{Binding G75G76}" Foreground="Yellow" myControl:KeyBoard.KeyBoard="True"/>
+
+            <StackPanel Grid.Row="11"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <TextBlock Text="{DynamicResource MACHINE_MENU_SIMPLENEST_Q}" Margin="10,0,0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            </StackPanel>
+            <TextBox Grid.Row="12" HorizontalAlignment="Left" Margin="10,5,0,5" Width="200" Background="Transparent"
+                     Text="{Binding Q}" Foreground="Yellow" myControl:KeyBoard.KeyBoard="True"/>
+
+            <StackPanel Grid.Row="13"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <TextBlock Text="{DynamicResource MACHINE_MENU_SIMPLENEST_PRGRAM}" Margin="10,0,0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            </StackPanel>
+            <TextBox Grid.Row="14" HorizontalAlignment="Left" Margin="10,5,0,5" Width="200" Background="Transparent"
+                     Text="{Binding PROGRAM}" Foreground="Yellow" myControl:KeyBoard.KeyBoard="True"/>
+
+        </Grid>
+
+    </Grid>
+</Page>

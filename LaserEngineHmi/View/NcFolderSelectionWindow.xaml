@@ -1,0 +1,125 @@
+﻿<Window x:Class="LaserEngineHmi.View.NcFolderSelectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:conv="clr-namespace:LaserEngineHmi.View.Converters" 
+        xmlns:local="clr-namespace:LaserEngineHmi.View"
+        mc:Ignorable="d" Background="#FF292828" WindowStartupLocation="CenterOwner"
+        Title="选择NC程序文件夹" Height="400" Width="300">
+    <Window.Resources>
+        <Style x:Key="FontAwesome">
+            <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/LaserEngineHmi;component/View/Styles/FontAwesome/#FontAwesome" />
+        </Style>
+
+        <conv:NcFolderLevelIconConverter x:Key="_nflic"/>
+
+        <DataTemplate x:Key="NcFolderViewDataTemplate">
+            <Border  x:Name="border" BorderThickness="1" BorderBrush="#FF9DC0BD" Margin="0">
+                <Grid Background="Transparent" x:Name="dataTem" Width="300">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="AUTO"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="text1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"
+                       Foreground="White" Text="{Binding Level,Converter={StaticResource _nflic}}" FontSize="12"/>
+                    <TextBlock Grid.Column="1" x:Name="text2" FontSize="12" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+										Text="&#xf07b;" 
+										Foreground="Yellow" Style="{DynamicResource FontAwesome}"/>
+                    <TextBlock x:Name="text3" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="2"
+                       Foreground="White" Text="{Binding Name}" FontSize="10"/>
+                </Grid>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}" Value="True">
+                    <Setter Property="Background" TargetName="text3" Value="Yellow"/>
+                    <Setter Property="Foreground" TargetName="text3" Value="Black"/>
+                    <!--<Setter Property="Foreground" TargetName="text1" Value="White"/>
+                    <Setter Property="Foreground" TargetName="text2" Value="White"/>-->
+                </DataTrigger>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF9DC0BD"/>
+                </Trigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+        <Style x:Key="NcFolderViewStyle" TargetType="{x:Type ListView}">
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListView}">
+                        <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" Background="{TemplateBinding Background}" Padding="0" SnapsToDevicePixels="true">
+                            <ScrollViewer Focusable="false" Padding="{TemplateBinding Padding}">
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </ScrollViewer>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Selector.IsSelected" Value="true">
+                                <Setter Property="Background" TargetName="Bd" Value="#FFAFEAE4"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="Bd" Value="Transparent"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsGrouping" Value="true"/>
+                                    <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="NcFolderViewItemStyle" TargetType="{x:Type ListViewItem}">
+            <Setter Property="Panel.Background" Value="Transparent"/>
+            <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorLevel=1, AncestorType={x:Type ItemsControl}, Mode=FindAncestor}}"/>
+            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorLevel=1, AncestorType={x:Type ItemsControl}, Mode=FindAncestor}}"/>
+            <Setter Property="Padding" Value="0,0,0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                        <Border BorderThickness="0" 
+                                Padding="{TemplateBinding Padding}" 
+                                BorderBrush="{TemplateBinding Border.BorderBrush}" 
+                                Background="{TemplateBinding Panel.Background}" 
+                                x:Name="Bd" 
+                                SnapsToDevicePixels="True">
+                            <ContentPresenter 
+                                Content="{TemplateBinding Content}" 
+                                ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                ContentStringFormat="{TemplateBinding ContentStringFormat}" 
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <ListView Margin="0" 
+                  Background="Transparent" BorderThickness="0" 
+                  Style="{DynamicResource NcFolderViewStyle}" HorizontalContentAlignment="Center"
+                  ItemTemplate="{DynamicResource NcFolderViewDataTemplate}"
+                  ItemContainerStyle="{DynamicResource NcFolderViewItemStyle}"
+                  ItemsSource="{Binding NcFolders}" SelectedItem="{Binding SelNcFolder}"/>
+    </Grid>
+</Window>

@@ -1,0 +1,45 @@
+﻿<Window x:Class="LaserEngineHmi.View.SparePartAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LaserEngineHmi.View"
+        ResizeMode="NoResize"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="添加备件记录" Height="300" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="使用位置:" Margin="10,0,10,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Width="250" Text="{Binding SparePart.Position}" 
+                Background="Transparent"  Foreground="Black"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="备件名称:" Margin="10,0,10,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,0,5" Width="250" Background="Transparent"
+                     Text="{Binding SparePart.Name}" Foreground="Black"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="规格:" Margin="10,0,10,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,0,5" Width="250" Background="Transparent"
+                     Text="{Binding SparePart.Specification}" Foreground="Black"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="备注:" Margin="10,0,10,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <TextBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,0,5" Width="250" Background="Transparent"
+                     Text="{Binding SparePart.Remark}" Foreground="Black"/>
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="取消" Style="{StaticResource btn-warning}" Command="{Binding CancelCmd}"/>
+            <Button Content="确认" Style="{StaticResource btn-primary}" Command="{Binding ConfirmCmd}" Margin="20,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

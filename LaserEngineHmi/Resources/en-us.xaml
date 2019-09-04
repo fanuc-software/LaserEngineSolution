@@ -1,0 +1,201 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key="TITLE_CONTENT">BFM LASER</s:String>
+    <s:String x:Key="TITLE_SERVO_CONTENT">Servo</s:String>
+    <s:String x:Key="TITLE_LASER_CONTENT">Laser</s:String>
+    <s:String x:Key="MAIN_LOGIN_TITLE">Welcome</s:String>
+    <s:String x:Key="MAIN_LOGIN_NAME">Name:</s:String>
+    <s:String x:Key="MAIN_LOGIN_PASSWORD">Password:</s:String>
+    <s:String x:Key="MAIN_LOGIN_BTN">Login</s:String>
+
+    <s:String x:Key="MAIN_MENUBTN_HOME_CONTENT">HOME</s:String>
+    <s:String x:Key="MAIN_MENUBTN_MACHINING_CONTENT">MACHINING</s:String>
+    <s:String x:Key="MAIN_MENUBTN_MACHINE_CONTENT">MACHINE</s:String>
+    <s:String x:Key="MAIN_MENUBTN_DIAGNOSE_CONTENT">DIAGNOSE</s:String>
+    <s:String x:Key="MAIN_MENUBTN_MAINTAIN_CONTENT">MAINTAIN</s:String>
+    <s:String x:Key="MAIN_MENUBTN_IO_CONTENT">IO</s:String>
+    <s:String x:Key="MAIN_MENUBTN_CUSTOM1_CONTENT">CUSTOM1</s:String>
+    <s:String x:Key="MAIN_MENUBTN_CUSTOM2_CONTENT">CUSTOM2</s:String>
+    <s:String x:Key="MAIN_MENUBTN_SIMULATION_CONTENT">SIMULATION</s:String>
+
+    <s:String x:Key="MOP_AUTO_CONTENT">AUTO</s:String>
+    <s:String x:Key="MOP_EDIT_CONTENT">EDIT</s:String>
+    <s:String x:Key="MOP_MDI_CONTENT">MDI</s:String>
+    <s:String x:Key="MOP_RMT_CONTENT">RMT</s:String>
+    <s:String x:Key="MOP_REF_CONTENT">REF</s:String>
+    <s:String x:Key="MOP_JOG_CONTENT">JOG</s:String>
+    <s:String x:Key="MOP_HND_CONTENT">HND</s:String>
+    <s:String x:Key="MOP_SINGLE_CONTENT">STEP</s:String>
+    <s:String x:Key="MOP_SKIP_CONTENT">SKIP</s:String>
+    <s:String x:Key="MOP_OPSTOP_CONTENT">OPT</s:String>
+    <s:String x:Key="MOP_DRYRUN_CONTENT">DRY</s:String>
+    <s:String x:Key="MOP_RESTART_CONTENT">ST</s:String>
+    <s:String x:Key="MOP_STOPSAVE_CONTENT">STSV</s:String>
+    <s:String x:Key="MOP_REPROC_CONTENT">RTRCT</s:String>
+    <s:String x:Key="MOP_EXPTIME_CONTENT">穿孔延长</s:String>
+    <s:String x:Key="MOP_SHPTIME_CONTENT">穿孔缩短</s:String>
+    <s:String x:Key="MOP_DUSTON_CONTENT">除尘ON</s:String>
+    <s:String x:Key="MOP_LAMP_CONTENT">照明ON</s:String>
+    <s:String x:Key="MOP_APPROACH_CONTENT">随动启动</s:String>
+    <s:String x:Key="MOP_TRACELOCK_CONTENT">随动锁定</s:String>
+    <s:String x:Key="MOP_XAXIS_CONTENT">X</s:String>
+    <s:String x:Key="MOP_YAXIS_CONTENT">Y</s:String>
+    <s:String x:Key="MOP_ZAXIS_CONTENT">Z</s:String>
+    <s:String x:Key="MOP_4AXIS_CONTENT">4</s:String>
+    <s:String x:Key="MOP_PLUS_CONTENT">+</s:String>
+    <s:String x:Key="MOP_RAPID_CONTENT">RAPID</s:String>
+    <s:String x:Key="MOP_SUB_CONTENT">-</s:String>
+    <s:String x:Key="MOP_PAPID_OV0_CONTENT">RAPID 0%</s:String>
+    <s:String x:Key="MOP_PAPID_OV25_CONTENT">RAPID 25%</s:String>
+    <s:String x:Key="MOP_PAPID_OV50_CONTENT">RAPID 50%</s:String>
+    <s:String x:Key="MOP_PAPID_OV100_CONTENT">RAPID 100%</s:String>
+    <s:String x:Key="MOP_HND_OV1_CONTENT">HND X1</s:String>
+    <s:String x:Key="MOP_HND_OV10_CONTENT">HND X10</s:String>
+    <s:String x:Key="MOP_HND_OV100_CONTENT">HND X100</s:String>
+    <s:String x:Key="MOP_HND_OV1000_CONTENT">HND X1000</s:String>
+
+    <s:String x:Key="MOP_JOGOV_CONTENT">JOG</s:String>
+    <s:String x:Key="MOP_AUXGAS_CONTENT">GAS</s:String>
+    <s:String x:Key="MOP_LASERPOWER_CONTENT">LASER PC</s:String>
+    <s:String x:Key="MOP_LASERFREQ_CONTENT">LASER FR</s:String>
+    <s:String x:Key="MOP_LASERDUTYRADIO_CONTENT">LASER DU</s:String>
+
+    <s:String x:Key="MACHINING_LIBMENU_CUT_CONTENT">切割</s:String>
+    <s:String x:Key="MACHINING_LIBMENU_HOLE_CONTENT">穿孔</s:String>
+    <s:String x:Key="MACHINING_LIBMENU_CORNER_CONTENT">尖角</s:String>
+    <s:String x:Key="MACHINING_LIBMENU_START_CONTENT">起始</s:String>
+    <s:String x:Key="MACHINING_LIBMENU_POWER_CONTENT">功率</s:String>
+
+    <s:String x:Key="MACHINING_LIB_LASER_CONTENT">LASER</s:String>
+    <s:String x:Key="MACHINING_LIB_CUT_CONTENT">CUTTER</s:String>
+    <s:String x:Key="MACHINING_LIB_OPTICAL_CONTENT">OPTICAL</s:String>
+    <s:String x:Key="MACHINING_LIB_MATERIALS_TYPE_CONTENT">MATERIAL</s:String>
+    <s:String x:Key="MACHINING_LIB_MATERIALS_THICKNESS_CONTENT">THICKNESS</s:String>
+
+    <s:String x:Key="MACHINE_MENU_SIMPLECORNERMACHINING_CONTENT">SIMPLE CORNER MACHINING</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_CONTENT">AUTO FIND SIDE</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_CONTENT">AUTO CUTTER CLEAN</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_CONTENT">REMAIN CUT</s:String>
+    <s:String x:Key="MACHINE_MENU_SIDEINJECTION_CONTENT">SIDE INJECTION</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTTERRESETCHECK_XPOS">X机械坐标</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTTERRESETCHECK_YPOS">Y机械坐标</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTTERRESETCHECK_RESETPOS">复归位置</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTTERRESETCHECK_ZLIMIT">Z轴坐标下限</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTTERRESETCHECK_CONTENT">CUTTER RESET CHECK</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCALIBTATION_CONTENT">AUTO CALIBTATION</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTREPLACE_CONTENT">AUTO CUTTER REPLACE</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_CONTENT">MANUEL CHANGE WORKSTATION</s:String>
+    <s:String x:Key="MACHINE_MENU_AREADUSTCLEAN_CONTENT">AREA DUST CLEAN</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTCENTER_CONTENT">CUTTER CENTER</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_CONTENT">SIMPLENEST</s:String>
+    <s:String x:Key="MACHINE_MENU_PREFIRE_CONTENT">PREFIRE</s:String>
+
+    <s:String x:Key="MACHINE_MENU_SIMPLECORNERMACHINING_GENERATEPROGRAM">GENERATE</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_MANUALSTART">START</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_PROCESSDESCRIP">寻边时X、Y的移动轨迹:P1→A→P2→B→P1→C→D</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_ZEROPOINT">ZERO POINT D</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_ANGLE">ANGLE</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_P1P2">P1-P2 DISTANCE</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_OPOFS">OP OFS</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_SIDEREMAIN">SIDE REMAIN</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_MANUALSTART">START</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_CENTEROFFSET">CENTER OFFSET</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_CENTER">CENTER</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_ZLIMIT">Z LIMIT-</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_ZOFS">Z OFS</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_TIME">NUM</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_CUT">切割 E</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_HOLE">穿孔 E</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_POINTTABLE">位置点列表</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_POINTINSERT">插入</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_POINTUP">向上</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_POINTDOWN">向下</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_POINTDEL">删除</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_POINTRESET">重置</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_GENERATEPROGRAM">创建程序</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTTERRESETCHECK_EXC">复归</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_MAIN">主工作台</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_SUB">副工作台</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_ZPOSITION">允许交换工作台的Z轴位置:</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_ONEKEY_CHECK">一键交换</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_MANUELSTEP_CHECK">手动分步交换</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_ONEKEY_BTN">一键交换</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTCENTER_POWER">功率(W):</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTCENTER_FREQ">频率(Hz):</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTCENTER_DUTYCYCLE">占空比(%):</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTCENTER_TIME">时间(sec):</s:String>
+
+    <s:String x:Key="SIMULATION_STATUS_TITLE">LASER STATUS</s:String>
+    <s:String x:Key="SIMULATION_STATUS_PC">LASER Pc:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_FR">LASER Fr:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_DU">LASER Du:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_PA">LASER Pa:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_E0XX">E0XX:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_E10X">E10X:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_F">FEEDRATE:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_LASEROV_PC">Pc OV:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_LASEROV_FR">Fr OV:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_LASEROV_DU">Du OV:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_NANOPC">NANO Pc STATUS:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_POWERCONTROL">PowerControl STATUS:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_EDGECUTTING">EdgeCutting STATUS:</s:String>
+
+    <s:String x:Key="DIAGNOSE_OTHERSIGSTATUS">LASER STATUS</s:String>
+    <s:String x:Key="DIAGNOSE_OTHERSIGSTATUS_PC">Pc</s:String>
+    <s:String x:Key="DIAGNOSE_OTHERSIGSTATUS_FR">Fr</s:String>
+    <s:String x:Key="DIAGNOSE_OTHERSIGSTATUS_DU">Du</s:String>
+    <s:String x:Key="DIAGNOSE_OTHERSIGSTATUS_PA">Pa</s:String>
+    <s:String x:Key="DIAGNOSE_OTHERSIGSTATUS_F">F</s:String>
+    <s:String x:Key="DIAGNOSE_REFLECTEDLIGHT">REFLECTED LIGHT</s:String>
+    <s:String x:Key="DIAGNOSE_COOLWATER_FLUX_PATH1">COOLWATER FLUX(PATH 1)</s:String>
+    <s:String x:Key="DIAGNOSE_COOLWATER_FLUX_PATH2">COOLWATER FLUX(PATH 2)</s:String>
+    <s:String x:Key="DIAGNOSE_COOLWATER_TEMP">COOLWATER TEMPERATURE</s:String>
+    <s:String x:Key="DIAGNOSE_FOGGING_TEMP">FOGGING TEMPERATURE</s:String>
+    <s:String x:Key="DIAGNOSE_LASER_TEMP">LASER TEMPERATURE</s:String>
+    <s:String x:Key="DIAGNOSE_LASER_HUMIDITY">HUMIDITY TEMPERATURE</s:String>
+
+    <s:String x:Key="IO_UICOPY_TITLE">COPY</s:String>
+    <s:String x:Key="IO_UICOPY_PATH">PATH SET</s:String>
+    <s:String x:Key="IO_UICOPY_KEY">KEY SET</s:String>
+
+    <s:String x:Key="IO_PROGRAMTRANS_TITLE">PROGRAM UPLOAD AND DOWNLOAD</s:String>
+
+    <s:String x:Key="IO_FACTORY_INITIAL">INITIAL</s:String>
+
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_TITLE">MACHINE OFS</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_MACHINETYPE">MACHINE TYPE</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_MACHINETYPE_XDISTANCE">X DISTANCE</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_MACHINETYPE_YDISTANCE">Y DISTANCE</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_MACHINETYPE_ZDISTANCE">Z DISTANCE</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_CNCTYPE">CNC TYPE</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_LASERTYPE">LASER TYPE</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_XMOTOR">X MOTOR TYPE</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_YMOTOR">Y MOTOR TYPE</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_ZMOTOR">Z MOTOR TYPE</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_CUTTYPE">CUTTER TYPE</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_OPTICAL">OPTICAL TYPE</s:String>
+
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_TITLE">SOFTWARE</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_LANGUAGE">LANGUAGE</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_LIB">LIBRARY</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_LIB_VERSION">LIBRARY VERSION:</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_LIB_UPDATA_TITLE">LIBRARY UPDATA PATH:</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_LIB_UPDATA_BTN">UPDATA</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_VERSION">SOFTWARE</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_SOFTWARE_VERSION">SOFTWARE VERSION:</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_SOFTWARE_OWNER_TITLE">软件版权属于:</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_SOFTWARE_OWNER">北京发那科机电有限公司</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_SOFTWARE_UPDATA_TITLE">SOFTWARE UPDATA PATH:</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_SOFTWARE_UPDATA_BTN">UPDATA</s:String>
+
+    <s:String x:Key="MAINTAIN_USEROFFSET_TITLE">用户管理</s:String>
+    <s:String x:Key="MAINTAIN_USEROFFSET_ADDUSER">添加用户</s:String>
+    <s:String x:Key="MAINTAIN_USEROFFSET_EDITUSER">编辑用户</s:String>
+    <s:String x:Key="MAINTAIN_USEROFFSET_ADDROLE">添加角色</s:String>
+    <s:String x:Key="MAINTAIN_USEROFFSET_EDITROLE">编辑角色</s:String>
+
+    <s:String x:Key="MAINTAIN_SPAREPART_TITLE">备件一览表</s:String>
+
+    <s:String x:Key="MAINTAIN_MANUAL_TITLE">产品说明书</s:String>
+</ResourceDictionary>

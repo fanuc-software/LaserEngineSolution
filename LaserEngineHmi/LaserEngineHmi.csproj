@@ -1,0 +1,860 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39738215-DF66-4534-8C5B-0897CA5BEA26}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LaserEngineHmi</RootNamespace>
+    <AssemblyName>LaserEngineHmi</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abt.Controls.SciChart.Wpf">
+      <HintPath>..\packages\Abt.Controls.SciChart.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="De.TorstenMandelkow.MetroChart">
+      <HintPath>..\packages\De.TorstenMandelkow.MetroChart\De.TorstenMandelkow.MetroChart.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="hasp_net_windows, Version=7.4.1.55825, Culture=neutral, PublicKeyToken=56120be447701319, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\hasp_net_windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Modbus.Net, Version=1.3.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Modbus.Net.1.3.10\lib\net45\Modbus.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Modbus.Net.Siemens, Version=1.3.10.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Modbus.Net.Siemens.1.3.10.2\lib\net45\Modbus.Net.Siemens.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Concurrent, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Enlightenment, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.5.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceLocation, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceLocation.1.3.1\lib\net45\ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.106.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.106.0\lib\net46\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.106.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.106.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.106.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.106.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
+    <Compile Include="App_Start\IocConfig.cs" />
+    <Compile Include="Enum\KeyBoardVisibleEnum.cs" />
+    <Compile Include="Helper\PasswordBoxHelper.cs" />
+    <Compile Include="Hook\NewKeyboardHook.cs" />
+    <Compile Include="Model\AutoFindSideInfoDto.cs" />
+    <Compile Include="Model\CncStateInfoDto.cs" />
+    <Compile Include="Model\DiagnoseInfoDto.cs" />
+    <Compile Include="Model\ManualFindSideInfoDto.cs" />
+    <Compile Include="Model\MopKeyStatusDto.cs" />
+    <Compile Include="Model\NcFolderDto.cs" />
+    <Compile Include="Model\NcProgramDto.cs" />
+    <Compile Include="Model\PcProgramDto.cs" />
+    <Compile Include="Model\SimulationInfoDto.cs" />
+    <Compile Include="Model\WorkStationInfoDto.cs" />
+    <Compile Include="ViewModel\AddMatrialWindowViewModel.cs" />
+    <Compile Include="ViewModel\AlarmListViewModel.cs" />
+    <Compile Include="ViewModel\AutoCutterCleanViewModel.cs" />
+    <Compile Include="ViewModel\AutoFindSideViewModel.cs" />
+    <Compile Include="ViewModel\AutoFocalPointViewModel.cs" />
+    <Compile Include="ViewModel\AuxGasCheckViewModel.cs" />
+    <Compile Include="ViewModel\Custom1ViewModel.cs" />
+    <Compile Include="ViewModel\Custom2ViewModel.cs" />
+    <Compile Include="ViewModel\CutCenterViewModel.cs" />
+    <Compile Include="ViewModel\CutterResetCheckViewModel.cs" />
+    <Compile Include="ViewModel\DelMatrialWindowViewModel.cs" />
+    <Compile Include="ViewModel\DiagnoseViewModel.cs" />
+    <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\IOViewModel.cs" />
+    <Compile Include="ViewModel\LoadingWaitViewModel.cs" />
+    <Compile Include="ViewModel\MachineOffsetViewModel.cs" />
+    <Compile Include="ViewModel\MachineViewModel.cs" />
+    <Compile Include="ViewModel\MachiningCutEditWindowViewModel.cs" />
+    <Compile Include="ViewModel\MachiningEdgeCuttingEditWindowViewModel.cs" />
+    <Compile Include="ViewModel\MachiningLibCutDataGridViewModel.cs" />
+    <Compile Include="ViewModel\MachiningLibEdgeCuttingDataGridViewModel.cs" />
+    <Compile Include="ViewModel\MachiningLibPiercingDataGridViewModel.cs" />
+    <Compile Include="ViewModel\MachiningLibSlopeControlDataGridViewModel.cs" />
+    <Compile Include="ViewModel\MachiningPiercingEditDiaglogViewModel.cs" />
+    <Compile Include="ViewModel\MachiningSlopeControlEditDiaglogViewModel.cs" />
+    <Compile Include="ViewModel\MachiningViewModel.cs" />
+    <Compile Include="ViewModel\MaintainViewModel.cs" />
+    <Compile Include="ViewModel\ManualAddViewModel.cs" />
+    <Compile Include="ViewModel\ManualFindSideViewModel.cs" />
+    <Compile Include="ViewModel\ManualViewModel.cs" />
+    <Compile Include="ViewModel\ManuelChangeWorkStationViewModel.cs" />
+    <Compile Include="ViewModel\NcFolderSelectionViewModel.cs" />
+    <Compile Include="ViewModel\OpMessageViewModel.cs" />
+    <Compile Include="ViewModel\ProgramTransViewModel.cs" />
+    <Compile Include="ViewModel\RemainCutViewModel.cs" />
+    <Compile Include="ViewModel\SimpleCornerMachiningViewModel.cs" />
+    <Compile Include="ViewModel\SimpleNestViewModel.cs" />
+    <Compile Include="ViewModel\SimulationViewModel.cs" />
+    <Compile Include="ViewModel\SoftwareOffsetViewModel.cs" />
+    <Compile Include="ViewModel\SparePartAddViewModel.cs" />
+    <Compile Include="ViewModel\SparePartEditViewModel.cs" />
+    <Compile Include="ViewModel\SparePartViewModel.cs" />
+    <Compile Include="ViewModel\UserPopViewModel.cs" />
+    <Compile Include="View\AddMatrialWindow.xaml.cs">
+      <DependentUpon>AddMatrialWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AlarmListWindow.xaml.cs">
+      <DependentUpon>AlarmListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AutoCutterCleanPage.xaml.cs">
+      <DependentUpon>AutoCutterCleanPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AutoFindSidePage.xaml.cs">
+      <DependentUpon>AutoFindSidePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AutoFocalPointPage.xaml.cs">
+      <DependentUpon>AutoFocalPointPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AuxGasCheckPage.xaml.cs">
+      <DependentUpon>AuxGasCheckPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CncSoftKeyBoard.xaml.cs">
+      <DependentUpon>CncSoftKeyBoard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\AdobeReaderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\AdobeReaderControl.Designer.cs">
+      <DependentUpon>AdobeReaderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\KeyBoard.xaml.cs">
+      <DependentUpon>KeyBoard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\LoginKeyBoard.xaml.cs">
+      <DependentUpon>LoginKeyBoard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\MOP.xaml.cs">
+      <DependentUpon>MOP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\MOP2.xaml.cs">
+      <DependentUpon>MOP2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\MOPViewModel.cs" />
+    <Compile Include="View\Controls\MOP_AK.xaml.cs">
+      <DependentUpon>MOP_AK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\MySendKeys.cs" />
+    <Compile Include="View\Controls\PasswordBoxHelper.cs" />
+    <Compile Include="View\Controls\PdfViewerHost.cs" />
+    <Compile Include="View\Controls\StoryboardManager.cs" />
+    <Compile Include="View\Converters\AuxGasKindConverter.cs" />
+    <Compile Include="View\Converters\BoolToColorConverter.cs" />
+    <Compile Include="View\Converters\CncAlarmBlingConverter.cs" />
+    <Compile Include="View\Converters\CncStateLampConverter.cs" />
+    <Compile Include="View\Converters\NcFolderLevelIconConverter.cs" />
+    <Compile Include="View\Converters\OperateNoticeBlingConverter.cs" />
+    <Compile Include="View\Converters\SystemMessageButtonColorConvertor.cs" />
+    <Compile Include="View\Converters\WorkStationColorConvertor.cs" />
+    <Compile Include="View\CsdMenuKeyBorad.xaml.cs">
+      <DependentUpon>CsdMenuKeyBorad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DelMatrialWindow.xaml.cs">
+      <DependentUpon>DelMatrialWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Helper\DisableNavigation.cs" />
+    <Compile Include="View\LoadingWaitWindow.xaml.cs">
+      <DependentUpon>LoadingWaitWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MachiningCutEditDiaglog.xaml.cs">
+      <DependentUpon>MachiningCutEditDiaglog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MachiningEdgeCuttingEditDiaglog.xaml.cs">
+      <DependentUpon>MachiningEdgeCuttingEditDiaglog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MachiningPiercingEditDiaglog.xaml.cs">
+      <DependentUpon>MachiningPiercingEditDiaglog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MachiningSlopeControlEditDiaglog.xaml.cs">
+      <DependentUpon>MachiningSlopeControlEditDiaglog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManualAddWindow.xaml.cs">
+      <DependentUpon>ManualAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManualFindSidePage.xaml.cs">
+      <DependentUpon>ManualFindSidePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NcFolderSelectionWindow.xaml.cs">
+      <DependentUpon>NcFolderSelectionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OpMessageWindow.xaml.cs">
+      <DependentUpon>OpMessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SimpleNestPage.xaml.cs">
+      <DependentUpon>SimpleNestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SparePartAddWindow.xaml.cs">
+      <DependentUpon>SparePartAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SparePartEditWindow.xaml.cs">
+      <DependentUpon>SparePartEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserAddPage.xaml.cs">
+      <DependentUpon>UserAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserPopWin.xaml.cs">
+      <DependentUpon>UserPopWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="View\Converters\MopBackgroundColorConverter.cs" />
+    <Compile Include="View\Converters\MopBoardBushConverter.cs" />
+    <Compile Include="View\Custom1Page.xaml.cs">
+      <DependentUpon>Custom1Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Custom2Page.xaml.cs">
+      <DependentUpon>Custom2Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CutCenterPage.xaml.cs">
+      <DependentUpon>CutCenterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CutterResetCheckPage.xaml.cs">
+      <DependentUpon>CutterResetCheckPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DiagnosePage.xaml.cs">
+      <DependentUpon>DiagnosePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FactoryInitialPage.xaml.cs">
+      <DependentUpon>FactoryInitialPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\IOPage.xaml.cs">
+      <DependentUpon>IOPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MachineOffsetPage.xaml.cs">
+      <DependentUpon>MachineOffsetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MachinePage.xaml.cs">
+      <DependentUpon>MachinePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MachiningLibEdgeCuttingDataGrid.xaml.cs">
+      <DependentUpon>MachiningLibEdgeCuttingDataGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MachiningLibCutDataGrid.xaml.cs">
+      <DependentUpon>MachiningLibCutDataGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MachiningLibPiercingDataGrid.xaml.cs">
+      <DependentUpon>MachiningLibPiercingDataGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MachiningLibSlopeControlDataGrid.xaml.cs">
+      <DependentUpon>MachiningLibSlopeControlDataGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MachiningLibStartDataGrid.xaml.cs">
+      <DependentUpon>MachiningLibStartDataGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MachiningPage.xaml.cs">
+      <DependentUpon>MachiningPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaintainPage.xaml.cs">
+      <DependentUpon>MaintainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow2.xaml.cs">
+      <DependentUpon>MainWindow2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManualPage.xaml.cs">
+      <DependentUpon>ManualPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManuelChangeWorkStationPage.xaml.cs">
+      <DependentUpon>ManuelChangeWorkStationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProgramTransPage.xaml.cs">
+      <DependentUpon>ProgramTransPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RemainCutPage.xaml.cs">
+      <DependentUpon>RemainCutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SimpleCornerMachiningPage.xaml.cs">
+      <DependentUpon>SimpleCornerMachiningPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SimulationPage.xaml.cs">
+      <DependentUpon>SimulationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SoftwareOffsetPage.xaml.cs">
+      <DependentUpon>SoftwareOffsetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SparePartPage.xaml.cs">
+      <DependentUpon>SparePartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UICopyPage.xaml.cs">
+      <DependentUpon>UICopyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserOffsetPage.xaml.cs">
+      <DependentUpon>UserOffsetPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Resources\en-us.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\zh-cn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+    <Page Include="View\AddMatrialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AlarmListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AutoCutterCleanPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AutoFindSidePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AutoFocalPointPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AuxGasCheckPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CncSoftKeyBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\ARROR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Controls\EMS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Controls\KeyBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\LoginKeyBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\MOP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\MOP2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\MOP_AK.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CsdMenuKeyBorad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DelMatrialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoadingWaitWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MachiningCutEditDiaglog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MachiningEdgeCuttingEditDiaglog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MachiningPiercingEditDiaglog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MachiningSlopeControlEditDiaglog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManualAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManualFindSidePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NcFolderSelectionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OpMessageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SimpleNestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SparePartAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SparePartEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserPopWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Custom1Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Custom2Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CutCenterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CutterResetCheckPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DiagnosePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FactoryInitialPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\IOPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MachineOffsetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MachinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MachiningLibEdgeCuttingDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MachiningLibCutDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MachiningLibPiercingDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MachiningLibSlopeControlDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MachiningLibStartDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MachiningPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaintainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="View\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\MainWindow2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManualPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManuelChangeWorkStationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProgramTransPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RemainCutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SimpleCornerMachiningPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SimulationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SoftwareOffsetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SparePartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Styles\BootStrap\BaseStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Styles\BootStrap\Bootstrap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Styles\BootStrap\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Styles\BootStrap\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Styles\BootStrap\DataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Styles\BootStrap\Fonts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Styles\BootStrap\FormControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Styles\BootStrap\InputGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Styles\BootStrap\Label.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Styles\BootStrap\Panel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Styles\BootStrap\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Styles\BootStrap\Sizes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Styles\BootStrap\Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Styles\MainColors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Styles\MainStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UICopyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserOffsetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\AdobeReaderControl.resx">
+      <DependentUpon>AdobeReaderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <Resource Include="View\Styles\FontAwesome\fontawesome-webfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\background2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\background3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConfigCenter\ConfigCenter.csproj">
+      <Project>{66124e9c-610b-492d-8e38-b28df3914cbe}</Project>
+      <Name>ConfigCenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataCenter\DataCenter.csproj">
+      <Project>{93e9f0ee-3e35-438d-976b-d83561d45581}</Project>
+      <Name>DataCenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FanucCnc\FanucCnc.csproj">
+      <Project>{afcdee67-3109-44b3-aa6b-d7694f7e89ea}</Project>
+      <Name>FanucCnc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserCenter\UserCenter.csproj">
+      <Project>{3cf6991e-e1a3-49c9-82f0-5424e09fc423}</Project>
+      <Name>UserCenter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LaserEngineMachineConfiguration.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\scm_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\scm_02.png" />
+    <Resource Include="Resources\images\scm_03.png" />
+    <Resource Include="Resources\images\scm_04.png" />
+    <Resource Include="Resources\images\scm_05.png" />
+    <Resource Include="Resources\images\scm_06.png" />
+    <Resource Include="Resources\images\scm_07.png" />
+    <Resource Include="Resources\images\scm_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\scm_01_d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\afs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\cac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\rc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\crc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\cc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\sn_batch.png" />
+    <Resource Include="Resources\images\sn_order.png" />
+    <Resource Include="Resources\images\sn_rm.png" />
+    <Resource Include="Resources\images\sn_try.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\mfs.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.106.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.106.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.106.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.106.0\build\net46\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

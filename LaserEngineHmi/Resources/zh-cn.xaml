@@ -1,0 +1,220 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key="TITLE_CONTENT">Laser Engine</s:String>
+    <s:String x:Key="TITLE_SERVO_CONTENT">伺服</s:String>
+    <s:String x:Key="TITLE_LASER_CONTENT">激光</s:String>
+    <s:String x:Key="MAIN_LOGIN_TITLE">欢迎登陆BFM激光画面系统</s:String>
+    <s:String x:Key="MAIN_LOGIN_NAME">用户名:</s:String>
+    <s:String x:Key="MAIN_LOGIN_PASSWORD">密 码:</s:String>
+    <s:String x:Key="MAIN_LOGIN_BTN">登陆</s:String>
+    
+    <s:String x:Key="MAIN_MENUBTN_HOME_CONTENT">主页</s:String>
+    <s:String x:Key="MAIN_MENUBTN_MACHINING_CONTENT">激光加工</s:String>
+    <s:String x:Key="MAIN_MENUBTN_SIMULATION_CONTENT">轨迹仿真</s:String>
+    <s:String x:Key="MAIN_MENUBTN_MACHINE_CONTENT">机床功能</s:String>
+    <s:String x:Key="MAIN_MENUBTN_DIAGNOSE_CONTENT">诊断</s:String>
+    <s:String x:Key="MAIN_MENUBTN_MAINTAIN_CONTENT">机床维护</s:String>
+    <s:String x:Key="MAIN_MENUBTN_IO_CONTENT">输入输出</s:String>
+    <s:String x:Key="MAIN_MENUBTN_CUSTOM1_CONTENT">备用</s:String>
+    <s:String x:Key="MAIN_MENUBTN_CUSTOM2_CONTENT">备用</s:String>
+
+    <s:String x:Key="MOP_AUTO_CONTENT">自动</s:String>
+    <s:String x:Key="MOP_EDIT_CONTENT">编辑</s:String>
+    <s:String x:Key="MOP_MDI_CONTENT">MDI</s:String>
+    <s:String x:Key="MOP_RMT_CONTENT">远程</s:String>
+    <s:String x:Key="MOP_REF_CONTENT">回零</s:String>
+    <s:String x:Key="MOP_JOG_CONTENT">手动</s:String>
+    <s:String x:Key="MOP_HND_CONTENT">手轮</s:String>
+    <s:String x:Key="MOP_SINGLE_CONTENT">单步</s:String>
+    <s:String x:Key="MOP_SKIP_CONTENT">跳过</s:String>
+    <s:String x:Key="MOP_OPSTOP_CONTENT">选择停止</s:String>
+    <s:String x:Key="MOP_DRYRUN_CONTENT">空运行</s:String>
+    <s:String x:Key="MOP_RESTART_CONTENT">自动启动</s:String>
+    <s:String x:Key="MOP_STOPSAVE_CONTENT">存储阻止</s:String>
+    <s:String x:Key="MOP_REPROC_CONTENT">回退</s:String>
+    <s:String x:Key="MOP_EXPTIME_CONTENT">穿孔延长</s:String>
+    <s:String x:Key="MOP_SHPTIME_CONTENT">穿孔缩短</s:String>
+    <s:String x:Key="MOP_DUSTON_CONTENT">除尘ON</s:String>
+    <s:String x:Key="MOP_LAMP_CONTENT">照明ON</s:String>
+    <s:String x:Key="MOP_APPROACH_CONTENT">随动启动</s:String>
+    <s:String x:Key="MOP_TRACELOCK_CONTENT">随动锁定</s:String>
+    <s:String x:Key="MOP_XAXIS_CONTENT">X</s:String>
+    <s:String x:Key="MOP_YAXIS_CONTENT">Y</s:String>
+    <s:String x:Key="MOP_ZAXIS_CONTENT">Z</s:String>
+    <s:String x:Key="MOP_4AXIS_CONTENT">4</s:String>
+    <s:String x:Key="MOP_PLUS_CONTENT">+</s:String>
+    <s:String x:Key="MOP_RAPID_CONTENT">手动快速</s:String>
+    <s:String x:Key="MOP_SUB_CONTENT">-</s:String>
+    <s:String x:Key="MOP_PAPID_OV0_CONTENT">快移 0%</s:String>
+    <s:String x:Key="MOP_PAPID_OV25_CONTENT">快移 25%</s:String>
+    <s:String x:Key="MOP_PAPID_OV50_CONTENT">快移 50%</s:String>
+    <s:String x:Key="MOP_PAPID_OV100_CONTENT">快移 100%</s:String>
+    <s:String x:Key="MOP_HND_OV1_CONTENT">手轮 X1</s:String>
+    <s:String x:Key="MOP_HND_OV10_CONTENT">手轮 X10</s:String>
+    <s:String x:Key="MOP_HND_OV100_CONTENT">手轮 X100</s:String>
+    <s:String x:Key="MOP_HND_OV1000_CONTENT">手轮 X1000</s:String>
+
+    <s:String x:Key="MOP_JOGOV_CONTENT">手动进给</s:String>
+    <s:String x:Key="MOP_AUXGAS_CONTENT">辅助气体</s:String>
+    <s:String x:Key="MOP_LASERPOWER_CONTENT">激光功率</s:String>
+    <s:String x:Key="MOP_LASERFREQ_CONTENT">激光频率</s:String>
+    <s:String x:Key="MOP_LASERDUTYRADIO_CONTENT">激光占空比</s:String>
+
+    <s:String x:Key="MACHINING_LIBMENU_CUT_CONTENT">切割</s:String>
+    <s:String x:Key="MACHINING_LIBMENU_HOLE_CONTENT">穿孔</s:String>
+    <s:String x:Key="MACHINING_LIBMENU_CORNER_CONTENT">尖角</s:String>
+    <s:String x:Key="MACHINING_LIBMENU_START_CONTENT">起始</s:String>
+    <s:String x:Key="MACHINING_LIBMENU_POWER_CONTENT">功率</s:String>
+
+    <s:String x:Key="MACHINING_LIB_LASER_CONTENT">激光器</s:String>
+    <s:String x:Key="MACHINING_LIB_CUT_CONTENT">切割头</s:String>
+    <s:String x:Key="MACHINING_LIB_OPTICAL_CONTENT">光纤类型</s:String>
+    <s:String x:Key="MACHINING_LIB_MATERIALS_TYPE_CONTENT">材料类型</s:String>
+    <s:String x:Key="MACHINING_LIB_MATERIALS_THICKNESS_CONTENT">材料厚度</s:String>
+
+    <s:String x:Key="MACHINE_MENU_SIMPLECORNERMACHINING_CONTENT">简易轮廓加工</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_CONTENT">自动寻边</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_CONTENT">割嘴自动清洁</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_CONTENT">余料切割</s:String>
+    <s:String x:Key="MACHINE_MENU_SIDEINJECTION_CONTENT">侧向喷油</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTTERRESETCHECK_CONTENT">割嘴复归检查</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCALIBTATION_CONTENT">随动传感器自动标定</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTREPLACE_CONTENT">割嘴自动更换</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_CONTENT">手动交换工作台</s:String>
+    <s:String x:Key="MACHINE_MENU_AREADUSTCLEAN_CONTENT">分区除尘</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTCENTER_CONTENT">割嘴对中调整</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_CONTENT">简易套料</s:String>
+    <s:String x:Key="MACHINE_MENU_PREFIRE_CONTENT">预烧膜</s:String>
+
+    <s:String x:Key="MACHINE_MENU_SIMPLECORNERMACHINING_GENERATEPROGRAM">生成程序</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_MANUALSTART">手动启动寻边</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_PROCESSDESCRIP">寻边时X、Y的移动轨迹:P1→A→P2→B→P1→C→D</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_ZEROPOINT">板材原点D</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_ANGLE">板材倾斜角度</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_P1P2">中间点P1、P2距离</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_OPOFS">光电开关偏置距离</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOFINDSIDE_SIDEREMAIN">板材边缘的垂直预留距离</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_MANUALSTART">手动启动清洁</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_CENTEROFFSET">铜刷中心位置设定</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_CENTER">铜刷中心位置</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_ZLIMIT">Z轴机械坐标下限</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_ZOFS">割嘴高度偏置</s:String>
+    <s:String x:Key="MACHINE_MENU_AUTOCUTTERCLEAN_TIME">割嘴清洁往返次数</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_CUT">切割 E</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_HOLE">穿孔 E</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_POINTTABLE">位置点列表</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_POINTINSERT">插入</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_POINTUP">向上</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_POINTDOWN">向下</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_POINTDEL">删除</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_POINTRESET">重置</s:String>
+    <s:String x:Key="MACHINE_MENU_REMAINCUT_GENERATEPROGRAM">创建程序</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTTERRESETCHECK_XPOS">X机械坐标</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTTERRESETCHECK_YPOS">Y机械坐标</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTTERRESETCHECK_RESETPOS">复归位置</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTTERRESETCHECK_ZLIMIT">Z轴坐标下限</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTTERRESETCHECK_EXC">复归</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_MAIN">主工作台</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_SUB">副工作台</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_ZPOSITION">允许交换工作台的Z轴位置:</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_ONEKEY_CHECK">一键交换</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_MANUELSTEP_CHECK">手动分步交换</s:String>
+    <s:String x:Key="MACHINE_MENU_MANUELCHANGEWORKSTATION_ONEKEY_BTN">一键交换</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTCENTER_POWER">功率(W):</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTCENTER_FREQ">频率(Hz):</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTCENTER_DUTYCYCLE">占空比(%):</s:String>
+    <s:String x:Key="MACHINE_MENU_CUTCENTER_TIME">时间(sec):</s:String>
+
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_ROW">行数设定:</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_COLOM">列数设定:</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_XSIZE">单个工件X尺寸:</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_YSIZE">单个工件Y尺寸:</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_G75G76">G75/G76选择:</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_Q">Q设定:</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_PRGRAM">工件程序号:</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_SIMPLEMEST_FUNC">简易套料功能无效</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_TRY">试切割</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_REMAIN">剩余切割</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_BATCH">批量切割</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_ORDER">切割顺序选择:</s:String>
+    <s:String x:Key="MACHINE_MENU_SIMPLENEST_START">调用程序</s:String>
+
+    <s:String x:Key="SIMULATION_STATUS_TITLE">激光状态</s:String>
+    <s:String x:Key="SIMULATION_STATUS_PC">功率指令Pc:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_FR">频率指令Fr:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_DU">占空比指令Du:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_PA">实际输出功率Pa:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_E0XX">当前切割E0XX:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_E10X">当前穿孔E10X:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_F">当前进给速度F:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_LASEROV_PC">激光功率指令倍率:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_LASEROV_FR">激光频率指令倍率:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_LASEROV_DU">激光占空比指令倍率:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_NANOPC">微小功率输出控制:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_POWERCONTROL">PowerControl状态:</s:String>
+    <s:String x:Key="SIMULATION_STATUS_EDGECUTTING">EdgeCutting状态:</s:String>
+
+    <s:String x:Key="DIAGNOSE_OTHERSIGSTATUS">激光状态</s:String>
+    <s:String x:Key="DIAGNOSE_OTHERSIGSTATUS_PC">Pc</s:String>
+    <s:String x:Key="DIAGNOSE_OTHERSIGSTATUS_FR">Fr</s:String>
+    <s:String x:Key="DIAGNOSE_OTHERSIGSTATUS_DU">Du</s:String>
+    <s:String x:Key="DIAGNOSE_OTHERSIGSTATUS_PA">Pa</s:String>
+    <s:String x:Key="DIAGNOSE_OTHERSIGSTATUS_F">F</s:String>
+    <s:String x:Key="DIAGNOSE_REFLECTEDLIGHT">合束单元内反射光</s:String>
+    <s:String x:Key="DIAGNOSE_COOLWATER_FLUX_PATH1">冷却水流量(PATH 1)</s:String>
+    <s:String x:Key="DIAGNOSE_COOLWATER_FLUX_PATH2">冷却水流量(PATH 2)</s:String>
+    <s:String x:Key="DIAGNOSE_COOLWATER_TEMP">冷却水温度</s:String>
+    <s:String x:Key="DIAGNOSE_FOGGING_TEMP">结雾温度</s:String>
+    <s:String x:Key="DIAGNOSE_LASER_TEMP">激光器内温度</s:String>
+    <s:String x:Key="DIAGNOSE_LASER_HUMIDITY">激光器内湿度</s:String>
+
+    <s:String x:Key="IO_UICOPY_TITLE">画面硬拷贝</s:String>
+    <s:String x:Key="IO_UICOPY_PATH">路径设定</s:String>
+    <s:String x:Key="IO_UICOPY_KEY">快捷键设定</s:String>
+
+    <s:String x:Key="IO_PROGRAMTRANS_TITLE">程序传输</s:String>
+
+    <s:String x:Key="IO_FACTORY_INITIAL">出厂备份</s:String>
+
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_TITLE">机床配置</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_MACHINETYPE">机床型号</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_MACHINETYPE_XDISTANCE">X行程</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_MACHINETYPE_YDISTANCE">Y行程</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_MACHINETYPE_ZDISTANCE">Z行程</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_CNCTYPE">CNC型号</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_LASERTYPE">激光器型号</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_XMOTOR">X轴电机型号</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_YMOTOR">Y轴电机型号</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_ZMOTOR">Z轴电机型号</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_CUTTYPE">切割头型号</s:String>
+    <s:String x:Key="MAINTAIN_MACHINEOFFSET_OPTICAL">光纤型号</s:String>
+    
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_TITLE">软件设定</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_LANGUAGE">软件语言设定</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_LIB">工艺库管理</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_LIB_VERSION">工艺库版本:</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_LIB_UPDATA_TITLE">工艺库升级路径</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_LIB_UPDATA_BTN">升级</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_LIB_BOOT_BTN">切换至原始数据库</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_LIB_USER_BTN">切换至用户数据库</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_LIB_INITIAL_BTN">用户数据库初始化</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_VERSION">软件管理</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_SOFTWARE_VERSION">软件版版本:</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_SOFTWARE_OWNER_TITLE">软件版权属于:</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_SOFTWARE_OWNER">北京发那科机电有限公司</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_SOFTWARE_UPDATA_TITLE">软件升级路径:</s:String>
+    <s:String x:Key="MAINTAIN_SOFTWAREOFFSET_SOFTWARE_UPDATA_BTN">升级</s:String>
+
+    <s:String x:Key="MAINTAIN_USEROFFSET_TITLE">用户管理</s:String>
+    <s:String x:Key="MAINTAIN_USEROFFSET_ADDUSER">添加用户</s:String>
+    <s:String x:Key="MAINTAIN_USEROFFSET_EDITUSER">编辑用户</s:String>
+    <s:String x:Key="MAINTAIN_USEROFFSET_ADDROLE">删除用户</s:String>
+    <s:String x:Key="MAINTAIN_USEROFFSET_EDITROLE">编辑角色</s:String>
+
+    <s:String x:Key="MAINTAIN_SPAREPART_TITLE">备件一览表</s:String>
+
+    <s:String x:Key="MAINTAIN_MANUAL_TITLE">产品说明书</s:String>
+
+
+</ResourceDictionary>

@@ -1,0 +1,19 @@
+﻿<Application x:Class="LaserEngineHmi.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="View/MainWindow2.xaml">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--在这里可以指定多个资源文件名-->
+                <ResourceDictionary Source="./View/Styles/MainStyles.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/LaserEngineHmi;component/View/Styles/Bootstrap/Bootstrap.xaml"/>
+
+                <ResourceDictionary Source="pack://application:,,,/LaserEngineHmi;component/Resources/en-us.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/LaserEngineHmi;component/Resources/zh-cn.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

@@ -1,0 +1,166 @@
+﻿<Page x:Class="LaserEngineHmi.View.DiagnosePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:myControl="clr-namespace:LaserEngineHmi.View.Controls"
+      xmlns:SciChart="http://schemas.abtsoftware.co.uk/scichart" 
+      mc:Ignorable="d" 
+      Height="528" Width="704"
+	Title="DiagnosePage">
+    <Page.Resources>
+        <Style x:Key="FontAwesome">
+            <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/LaserEngineHmi;component/View/Styles/FontAwesome/#FontAwesome" />
+        </Style>
+
+    </Page.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadPageCommand}"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnLoadPageCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid Margin="0,3,0,2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#FF323232">
+                <TextBlock Text="{DynamicResource DIAGNOSE_OTHERSIGSTATUS}" Margin="10"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            </Grid>
+            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center">
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource DIAGNOSE_OTHERSIGSTATUS_PC}" Margin="20,0,0,0" Width="120"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                    <TextBlock Text="{Binding DiagnoseInfo.DIAGNOSE_VALUE_PC}" Margin="20,0,0,0" Width="50"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    <TextBlock Text="W" Margin="20,0,0,0" Width="200"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                    <TextBlock Text="0%" Margin="0,0,0,0" Width="30"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                    <ProgressBar Value="{Binding DiagnoseInfo.DIAGNOSE_PERCENT_PC}"  Maximum="200" Width="200" Style="{DynamicResource progress-bar}"></ProgressBar>
+                    <TextBlock Text="200%" Margin="0,0,0,0" Width="40"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                </StackPanel>
+                <Rectangle Fill="#FF323232" Margin="0,5,0,0" Width="840" Height="1"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Center">
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource DIAGNOSE_OTHERSIGSTATUS_FR}" Margin="20,0,0,0" Width="120"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                    <TextBlock Text="{Binding DiagnoseInfo.DIAGNOSE_VALUE_FR}" Margin="20,0,0,0" Width="50"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    <TextBlock Text="Hz" Margin="20,0,0,0" Width="200"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                    <TextBlock Text="0%" Margin="0,0,0,0" Width="30"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                    <ProgressBar Value="{Binding DiagnoseInfo.DIAGNOSE_PERCENT_FR}"  Maximum="200" Width="200" Style="{DynamicResource progress-bar}"></ProgressBar>
+                    <TextBlock Text="200%" Margin="0,0,0,0" Width="40"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                </StackPanel>
+                <Rectangle Fill="#FF323232" Margin="0,5,0,0" Width="840" Height="1"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Vertical" VerticalAlignment="Center">
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource DIAGNOSE_OTHERSIGSTATUS_DU}" Margin="20,0,0,0" Width="120"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                    <TextBlock Text="{Binding DiagnoseInfo.DIAGNOSE_VALUE_DU}" Margin="20,0,0,0" Width="50"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    <TextBlock Text="%" Margin="20,0,0,0" Width="200"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                    <TextBlock Text="0%" Margin="0,0,0,0" Width="30"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                    <ProgressBar Value="{Binding DiagnoseInfo.DIAGNOSE_PERCENT_DU}" Maximum="200" Width="200" Style="{DynamicResource progress-bar}"></ProgressBar>
+                    <TextBlock Text="200%" Margin="0,0,0,0" Width="40"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                </StackPanel>
+                <Rectangle Fill="#FF323232" Margin="0,5,0,0" Width="840" Height="1"/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Orientation="Vertical" VerticalAlignment="Center">
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource DIAGNOSE_OTHERSIGSTATUS_PA}" Margin="20,0,0,0" Width="120"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                    <TextBlock Text="{Binding DiagnoseInfo.DIAGNOSE_VALUE_PA}" Margin="20,0,0,0" Width="50"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    <TextBlock Text="W" Margin="20,0,0,0" Width="200"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                </StackPanel>
+                <Rectangle Fill="#FF323232" Margin="0,5,0,0" Width="840" Height="1"/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Orientation="Vertical" VerticalAlignment="Center">
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource DIAGNOSE_OTHERSIGSTATUS_F}" Margin="20,0,0,0" Width="150"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                    <TextBlock Text="{Binding DiagnoseInfo.DIAGNOSE_VALUE_F}" Margin="20,0,0,0" Width="50"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+                    <TextBlock Text="mm/min" Margin="20,0,0,0" Width="200"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+                </StackPanel>
+                <Rectangle Fill="#FF323232" Margin="0,5,0,0" Width="840" Height="1"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="{DynamicResource DIAGNOSE_REFLECTEDLIGHT}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding DiagnoseInfo.DIAGNOSE_REFLECTEDLIGHT}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="{DynamicResource DIAGNOSE_COOLWATER_FLUX_PATH1}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding DiagnoseInfo.DIAGNOSE_COOLWATER_FLUX_PATH1}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+            <TextBlock Grid.Column="4" Grid.Row="1" Text="{DynamicResource DIAGNOSE_COOLWATER_FLUX_PATH2}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <TextBlock Grid.Column="5" Grid.Row="1" Text="{Binding DiagnoseInfo.DIAGNOSE_COOLWATER_FLUX_PATH2}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="{DynamicResource DIAGNOSE_COOLWATER_TEMP}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding DiagnoseInfo.DIAGNOSE_COOLWATER_TEMP}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+            <TextBlock Grid.Column="4" Grid.Row="2" Text="{DynamicResource DIAGNOSE_FOGGING_TEMP}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <TextBlock Grid.Column="5" Grid.Row="2" Text="{Binding DiagnoseInfo.DIAGNOSE_FOGGING_TEMP}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+            <TextBlock Grid.Column="0" Grid.Row="3" Text="{DynamicResource DIAGNOSE_LASER_TEMP}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding DiagnoseInfo.DIAGNOSE_LASER_TEMP}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+            <TextBlock Grid.Column="4" Grid.Row="3" Text="{DynamicResource DIAGNOSE_LASER_HUMIDITY}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <TextBlock Grid.Column="5" Grid.Row="3" Text="{Binding DiagnoseInfo.DIAGNOSE_LASER_HUMIDITY}" Margin="0,0,0,0"
+                               HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Yellow"/>
+
+        </Grid>
+    </Grid>
+</Page>

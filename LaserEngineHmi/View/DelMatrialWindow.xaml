@@ -1,0 +1,58 @@
+﻿<Window x:Class="LaserEngineHmi.View.DelMatrialWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LaserEngineHmi.View"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="删除材料" Height="200" Width="400">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadPageCommand}"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnLoadPageCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="材料名称:" Margin="10,0,0,0" Grid.Row="1" Grid.Column="0"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+
+        <ComboBox Grid.Column="1" Grid.Row="1"  Margin="0,0,0,0" Width="140" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                  Background="#FF323232"  Foreground="White"
+                                  ItemsSource="{Binding _MaterialNames}" SelectedItem="{Binding _SelectedMaterialName,Mode=TwoWay}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding _Material_Changed_Command}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ComboBox>
+
+
+        <TextBlock Text="材料厚度:" Margin="10,0,0,0" Grid.Row="2" Grid.Column="0"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" Foreground="Black"/>
+        <ComboBox  Grid.Column="1" Grid.Row="2"  Margin="0,2,0,0"  Width="140" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF323232"  Foreground="White"
+                                  ItemsSource="{Binding _MaterialDtos}" SelectedItem="{Binding _SelectedMaterial, Mode=TwoWay}" DisplayMemberPath="Thickness" SelectedValuePath="Thickness">
+        </ComboBox>
+
+        <Button  Grid.Row="1" Grid.Column="2" Style="{StaticResource btn-warning}" Margin="0,0,0,0" Content="删除材料记录" Command="{Binding _DelMatrialCmd}"/>
+
+        <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource btn-danger}" Margin="0,0,0,0" Content="删除厚度记录" Command="{Binding _DelThicknessCmd}"/>
+
+    </Grid>
+</Window>

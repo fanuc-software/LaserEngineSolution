@@ -1,0 +1,47 @@
+﻿<Page x:Class="LaserEngineHmi.View.SparePartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LaserEngineHmi.View"
+      mc:Ignorable="d" 
+      Width="624" Height="528" Background="#FF323232"
+      Title="SparePartPage">
+    <Page.Resources>
+        <Style x:Key="FontAwesome">
+            <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/LaserEngineHmi;component/View/Styles/FontAwesome/#FontAwesome" />
+        </Style>
+    </Page.Resources>
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <DataGrid Margin="10" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True"
+                      ItemsSource="{Binding SpareParts}" SelectedItem="{Binding SelSparePart}"
+                   FontSize="14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Position}" Header="使用位置" Width="200" ElementStyle="{StaticResource DataGridTextCenter}"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="备件名称" Width="200" ElementStyle="{StaticResource DataGridTextCenter}"/>
+                <DataGridTextColumn Binding="{Binding Specification}" Header="规格" Width="120" ElementStyle="{StaticResource DataGridTextCenter}"/>
+                <DataGridTextColumn Binding="{Binding Remark}" Header="备注" Width="120" ElementStyle="{StaticResource DataGridTextCenter}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Border CornerRadius="2" Grid.Row="2" 
+                		BorderThickness="1"
+                		Padding="0" Margin="0,5,0,0"
+                        Background="Transparent" BorderBrush="#FF323232">
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button Grid.Column="7" Grid.Row="0" Grid.RowSpan="2" Margin="5,0,5,0" Content="&#xf067;" Style="{StaticResource LibSearchButton}"
+                                Command="{Binding _AddCmd}"/>
+                <Button Grid.Column="7" Grid.Row="0" Grid.RowSpan="2" Margin="5,0,5,0" Content="&#xf068;" Style="{StaticResource LibSearchButton}"
+                                Command="{Binding _DeleteCmd}"/>
+                <Button Grid.Column="8" Grid.Row="0" Grid.RowSpan="2" Margin="5,0,15,0" Content="&#xf044;" Style="{StaticResource LibSearchButton}"
+                                Command="{Binding _EditCmd}"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

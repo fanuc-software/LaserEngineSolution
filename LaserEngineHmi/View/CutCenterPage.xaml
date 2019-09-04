@@ -1,0 +1,92 @@
+﻿<Page x:Class="LaserEngineHmi.View.CutCenterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LaserEngineHmi.View"
+      xmlns:myControl="clr-namespace:LaserEngineHmi.View.Controls"
+      mc:Ignorable="d" 
+      Width="624" Height="528" Background="#FF323232"
+      Title="CutCenterPage">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="360"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Column="0" BorderBrush="#FF323232" BorderThickness="0" Background="Transparent">
+                <Image Margin="10" Source="/LaserEngineHmi;component/Resources/images/cc.png"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+
+            <Button Grid.Row="2" Width="200" Height="60"   VerticalAlignment="Center" Content="{DynamicResource MACHINE_MENU_AUTOCUTTERCLEAN_MANUALSTART}" 
+                        HorizontalAlignment="Center" Style="{StaticResource MachineMainExcButton}"
+                    Click="Button_Click"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="2" Margin="15,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <TextBlock Text="{DynamicResource MACHINE_MENU_CUTCENTER_POWER}" Margin="10,0,0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            </StackPanel>
+            <TextBox Grid.Row="2" HorizontalAlignment="Left" Margin="10,5,0,5" Width="200" Background="Transparent"
+                     Text="{Binding PC}" Foreground="Yellow" myControl:KeyBoard.KeyBoard="True"/>
+
+            <StackPanel Grid.Row="3"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <TextBlock Text="{DynamicResource MACHINE_MENU_CUTCENTER_FREQ}" Margin="10,0,0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            </StackPanel>
+            <TextBox Grid.Row="4" HorizontalAlignment="Left" Margin="10,5,0,5" Width="200" Background="Transparent"
+                      Text="{Binding FR}" Foreground="Yellow" myControl:KeyBoard.KeyBoard="True"/>
+
+            <StackPanel Grid.Row="5"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <TextBlock Text="{DynamicResource MACHINE_MENU_CUTCENTER_DUTYCYCLE}" Margin="10,0,0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+                <TextBlock Text=":" Margin="5,0,0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            </StackPanel>
+            <TextBox Grid.Row="6" HorizontalAlignment="Left" Margin="10,5,0,5" Width="200" Background="Transparent"
+                      Text="{Binding DU}" Foreground="Yellow" myControl:KeyBoard.KeyBoard="True"/>
+
+            <StackPanel Grid.Row="7"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <TextBlock Text="{DynamicResource MACHINE_MENU_CUTCENTER_TIME}" Margin="10,0,0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+                <TextBlock Text=":" Margin="5,0,0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="White"/>
+            </StackPanel>
+            <TextBox Grid.Row="8" HorizontalAlignment="Left" Margin="10,5,0,5" Width="200" Background="Transparent"
+                      Text="{Binding TIME}" Foreground="Yellow" myControl:KeyBoard.KeyBoard="True"/>
+        </Grid>
+
+    </Grid>
+</Page>

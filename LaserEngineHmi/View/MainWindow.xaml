@@ -1,0 +1,140 @@
+﻿<Window x:Class="LaserEngineHmi.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="900" Width="1440" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--main menu-->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <ToggleButton Grid.Column="0" Margin="1" Style="{StaticResource ToggleMenuButton}" Command="{Binding _homeCmd}" Content="{DynamicResource MAIN_MENUBTN_HOME_CONTENT}" IsChecked="{Binding _MenuHomeClicked}"/>
+            <ToggleButton Grid.Column="1" Margin="1" Style="{StaticResource ToggleMenuButton}" Command="{Binding _machiningCmd}" Content="{DynamicResource MAIN_MENUBTN_MACHINING_CONTENT}" IsChecked="{Binding _MenuMachiningClicked}"/>
+            <ToggleButton Grid.Column="2" Margin="1" Style="{StaticResource ToggleMenuButton}" Command="{Binding _machineCmd}" Content="{DynamicResource MAIN_MENUBTN_MACHINE_CONTENT}" IsChecked="{Binding _MenuMachineClicked}"/>
+            <ToggleButton Grid.Column="3" Margin="1" Style="{StaticResource ToggleMenuButton}" Command="{Binding _diagnoseCmd}" Content="{DynamicResource MAIN_MENUBTN_DIAGNOSE_CONTENT}" IsChecked="{Binding _MenuDiagnoseClicked}"/>
+            <ToggleButton Grid.Column="4" Margin="1" Style="{StaticResource ToggleMenuButton}" Command="{Binding _ioCmd}" Content="{DynamicResource MAIN_MENUBTN_IO_CONTENT}" IsChecked="{Binding _MenuIOClicked}"/>
+            <ToggleButton Grid.Column="5" Margin="1" Style="{StaticResource ToggleMenuButton}" Command="{Binding _maintainCmd}" Content="{DynamicResource MAIN_MENUBTN_MAINTAIN_CONTENT}" IsChecked="{Binding _MenuMaintainClicked}"/>
+            <ToggleButton Grid.Column="6" Margin="1" Style="{StaticResource ToggleMenuButton}" Command="{Binding _custom1Cmd}" Content="{DynamicResource MAIN_MENUBTN_CUSTOM1_CONTENT}" IsChecked="{Binding _MenuCustom1Clicked}"/>
+            <ToggleButton Grid.Column="7" Margin="1" Style="{StaticResource ToggleMenuButton}" Command="{Binding _custom2Cmd}" Content="{DynamicResource MAIN_MENUBTN_CUSTOM2_CONTENT}" IsChecked="{Binding _MenuCustom2Clicked}"/>
+        </Grid>
+
+        <!--state panel-->
+        <Grid Grid.Row="1" Margin="1,0,1,0" Background="#FF333399"></Grid>
+
+        <!--main panel-->
+        <Grid Grid.Row="2" Margin="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="186"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!--mop-->
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="68"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="68"/>
+                    <ColumnDefinition Width="68"/>
+                    <ColumnDefinition Width="68"/>
+                    <ColumnDefinition Width="68"/>
+                    <ColumnDefinition Width="68"/>
+                    <ColumnDefinition Width="68"/>
+                    <ColumnDefinition Width="68"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="0" Grid.Column="1" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="0" Grid.Column="2" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="0" Grid.Column="3" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="0" Grid.Column="4" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="0" Grid.Column="5" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="0" Grid.Column="6" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="1" Grid.Column="0" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="1" Grid.Column="1" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="1" Grid.Column="2" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="1" Grid.Column="3" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="1" Grid.Column="4" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="1" Grid.Column="5" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="1" Grid.Column="6" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="2" Grid.Column="0" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="2" Grid.Column="1" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="2" Grid.Column="2" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="2" Grid.Column="3" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="2" Grid.Column="4" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="2" Grid.Column="5" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="2" Grid.Column="6" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="3" Grid.Column="0" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="3" Grid.Column="1" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="3" Grid.Column="2" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="3" Grid.Column="3" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="3" Grid.Column="4" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="3" Grid.Column="5" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="3" Grid.Column="6" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="4" Grid.Column="0" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="4" Grid.Column="1" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="4" Grid.Column="2" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="4" Grid.Column="3" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="4" Grid.Column="4" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="4" Grid.Column="5" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="4" Grid.Column="6" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="5" Grid.Column="0" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="5" Grid.Column="1" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="5" Grid.Column="2" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="5" Grid.Column="3" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="5" Grid.Column="4" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="5" Grid.Column="5" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="5" Grid.Column="6" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="6" Grid.Column="0" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="6" Grid.Column="1" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="6" Grid.Column="2" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="6" Grid.Column="3" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="6" Grid.Column="4" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="6" Grid.Column="5" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="6" Grid.Column="6" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="7" Grid.Column="0" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="7" Grid.Column="1" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="7" Grid.Column="2" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="7" Grid.Column="3" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="7" Grid.Column="4" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="7" Grid.Column="5" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="7" Grid.Column="6" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="8" Grid.Column="0" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="8" Grid.Column="1" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="8" Grid.Column="2" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="8" Grid.Column="3" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="8" Grid.Column="4" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="8" Grid.Column="5" Margin="1" Style="{StaticResource MopButton}"></Button>
+                <Button Grid.Row="8" Grid.Column="6" Margin="1" Style="{StaticResource MopButton}"></Button>
+            </Grid>
+
+        </Grid>
+
+
+    </Grid>
+</Window>

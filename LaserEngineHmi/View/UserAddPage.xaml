@@ -1,0 +1,25 @@
+﻿<Page x:Class="LaserEngineHmi.View.UserAddPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LaserEngineHmi.View"
+      mc:Ignorable="d" 
+      Width="700" Height="725"
+      Title="添加用户">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"  Background="#FF323232">
+            <TextBlock Text="{DynamicResource MAINTAIN_USEROFFSET_ADDUSER}" Margin="10"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="White"/>
+        </Grid>
+    </Grid>
+</Page>

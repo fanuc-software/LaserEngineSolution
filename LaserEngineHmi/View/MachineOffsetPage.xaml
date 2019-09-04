@@ -1,0 +1,132 @@
+﻿<Page x:Class="LaserEngineHmi.View.MachineOffsetPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LaserEngineHmi.View"
+      xmlns:myControl="clr-namespace:LaserEngineHmi.View.Controls"
+      mc:Ignorable="d" 
+      Width="624" Height="528" Background="#FF323232"
+      Title="MachineOffsetPage">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock  Grid.Row="1" Grid.Column="0" 
+                Text="{DynamicResource MAINTAIN_MACHINEOFFSET_MACHINETYPE}" Margin="0,0,10,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBox 
+                     HorizontalAlignment="Left" Margin="10,5,0,5" Width="180" Background="Transparent" Foreground="Yellow" 
+                    Text="{Binding MachineType}" myControl:KeyBoard.KeyBoard="True"/>
+            </StackPanel>
+            <TextBlock  Grid.Row="2" Grid.Column="0" 
+                Text="{DynamicResource MAINTAIN_MACHINEOFFSET_MACHINETYPE_XDISTANCE}" Margin="0,0,10,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBox 
+                     HorizontalAlignment="Left" Margin="10,5,0,5" Width="180" Background="Transparent" Foreground="Yellow"
+                    Text="{Binding XDistance}" myControl:KeyBoard.KeyBoard="True"/>
+            </StackPanel>
+            <TextBlock  Grid.Row="3" Grid.Column="0" 
+                Text="{DynamicResource MAINTAIN_MACHINEOFFSET_MACHINETYPE_YDISTANCE}" Margin="0,0,10,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBox 
+                     HorizontalAlignment="Left" Margin="10,5,0,5" Width="180" Background="Transparent" Foreground="Yellow"
+                    Text="{Binding YDistance}" myControl:KeyBoard.KeyBoard="True"/>
+            </StackPanel>
+            <TextBlock  Grid.Row="4" Grid.Column="0" 
+                Text="{DynamicResource MAINTAIN_MACHINEOFFSET_MACHINETYPE_ZDISTANCE}" Margin="0,0,10,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBox 
+                     HorizontalAlignment="Left" Margin="10,5,0,5" Width="180" Background="Transparent" Foreground="Yellow"
+                    Text="{Binding ZDistance}" myControl:KeyBoard.KeyBoard="True"/>
+            </StackPanel>
+            <TextBlock  Grid.Row="1" Grid.Column="3" 
+                Text="{DynamicResource MAINTAIN_MACHINEOFFSET_CNCTYPE}" Margin="0,0,10,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <StackPanel Grid.Row="1" Grid.Column="4" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBox 
+                     HorizontalAlignment="Left" Margin="10,5,0,5" Width="180" Background="Transparent" Foreground="Yellow"
+                     Text="{Binding CncType}" myControl:KeyBoard.KeyBoard="True"/>
+            </StackPanel>
+            <TextBlock  Grid.Row="2" Grid.Column="3" 
+                Text="{DynamicResource MAINTAIN_MACHINEOFFSET_XMOTOR}" Margin="0,16,9,16"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBox 
+                     HorizontalAlignment="Left" Margin="10,5,0,5" Width="180" Background="Transparent" Foreground="Yellow"
+                    Text="{Binding XMotorType}" myControl:KeyBoard.KeyBoard="True"/>
+            </StackPanel>
+            <TextBlock  Grid.Row="3" Grid.Column="3" 
+                Text="{DynamicResource MAINTAIN_MACHINEOFFSET_YMOTOR}" Margin="0,0,10,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <StackPanel Grid.Row="3" Grid.Column="4" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBox 
+                     HorizontalAlignment="Left" Margin="10,5,0,5" Width="180" Background="Transparent" Foreground="Yellow"
+                    Text="{Binding YMotorType}" myControl:KeyBoard.KeyBoard="True"/>
+            </StackPanel>
+            <TextBlock  Grid.Row="4" Grid.Column="3" 
+                Text="{DynamicResource MAINTAIN_MACHINEOFFSET_ZMOTOR}" Margin="0,0,10,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <StackPanel Grid.Row="4" Grid.Column="4" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBox 
+                     HorizontalAlignment="Left" Margin="10,5,0,5" Width="180" Background="Transparent" Foreground="Yellow"
+                    Text="{Binding ZMotorType}" myControl:KeyBoard.KeyBoard="True"/>
+            </StackPanel>
+            <TextBlock  Grid.Row="6" Grid.Column="0" 
+                Text="{DynamicResource MAINTAIN_MACHINEOFFSET_LASERTYPE}" Margin="0,0,10,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBox 
+                     HorizontalAlignment="Left" Margin="10,5,0,5" Width="180" Background="Transparent" Foreground="Yellow"
+                    Text="{Binding LaserType}" myControl:KeyBoard.KeyBoard="True"/>
+            </StackPanel>
+            <TextBlock  Grid.Row="6" Grid.Column="3" 
+                Text="{DynamicResource MAINTAIN_MACHINEOFFSET_CUTTYPE}" Margin="0,0,10,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <StackPanel Grid.Row="6" Grid.Column="4" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBox 
+                     HorizontalAlignment="Left" Margin="10,5,0,5" Width="180" Background="Transparent" Foreground="Yellow"
+                    Text="{Binding CutterType}" myControl:KeyBoard.KeyBoard="True"/>
+            </StackPanel>
+            <TextBlock  Grid.Row="7" Grid.Column="0" 
+                Text="{DynamicResource MAINTAIN_MACHINEOFFSET_OPTICAL}" Margin="0,0,10,0"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="White"/>
+            <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBox 
+                     HorizontalAlignment="Left" Margin="10,5,0,5" Width="180" Background="Transparent" Foreground="Yellow"
+                    Text="{Binding OpticalType}" myControl:KeyBoard.KeyBoard="True"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
